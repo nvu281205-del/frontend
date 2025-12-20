@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
+header h1{
+  font-family: Comfortaa;
+    color:white;
+  font-size: 40px;
+  margin-left: 100px;
+}
+body{
+    padding: 0;
+    margin: 0;
+}
+header{
+    background-color: #54c273;
+    width: 100%;
+}
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.search-container{
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+header input {
+     line-height: 30px;
+    outline: none;
+    background-color: white;
+    border: none;
+    width: 270px;
+    height: 30px;
+    padding:5px 45px 5px;
+    border-radius: 5px;
+    
+}
+#searchIcon{
+    position: absolute;
+    left: 15px;
+    top: 10px;
+    width: 20px;
+    height: 20px;
+    z-index: 10;
+}
+.search-container span {
+    position: absolute;
+    right: 100px;
+  width: 1px;
+  height: 20px;
+  background-color: #ccc;
+  
+}
+.search-container button{
+    font-size: 15px;
+   font-weight: 400;
+    top:50%;
+    transform: translateY(-53%);
+   position: absolute;
+   right:10px;
+    cursor: pointer;
+    border: none;    
+    background: none;
+   
+}
+header button:focus {
+  outline: none;
+}
+.eventCreate{
+    font-size: 15px;
+    padding:10px 20px 10px;
+    width: 150px;
+    height: 40px;
+    border-radius: 100px;
+    background:none;;
+    border:1px solid white;
+    color:white;
+}
+.eventCreate:hover{
+    background-color: white;
+    color: black;
+    transition: 0.3s;
+}
+.MyTicket{
+   align-items: center;
+    display: flex;
+}
+.MyTicket img{
+     cursor: pointer;
+    width:30px;
+    height:30px;
+   
+}
+.MyTicket button{
+     cursor: pointer;
+    padding:10px 10px;
+    background:none;
+    border:none;
+    color:white;
+    font-size: 15px;
+}
+.Login{
+    align-items: center;
+    display: flex;
+}
+.Login button{
+    font-weight: bold;
+    cursor: pointer;
+    padding: 0 5px;
+    background:none;;
+    border:none;
+    color:white;
+    font-size: 15px;
+}
+.Login span{
+    width: 2px;
+    height: 25px;
+    background-color: white;
+}
+.Language{
+    background-color: #54c273;
+     border-radius: 8px;
+ width: 40px;
+ height: 10px;
+    padding:16px;
+    align-items: center;
+    display: flex;
+    gap:0px;
+}
+.Language img{
+    width:25px;
+    height:25px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.Language button{
+    cursor: pointer;
+    padding: 20 15px;
+    background:none;;
+    border:none;
+    color:white;
+    font-size: 10px;
+}
+.Language:hover{
+   background-color: #48a964;
+ transition: background-color 0.3s;
+}
