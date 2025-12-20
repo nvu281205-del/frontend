@@ -1,0 +1,18 @@
+.Navmenu {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 15px;
+    padding: 20px 150px 20px;
+    background-color: black;
+    color: white;
+}
+.Navmenu span{
+    cursor: pointer;
+   font-family: 'Poppins', sans-serif;
+   font-size: 14px;
+}
+.Navmenu span:hover{
+    color: #54c273;
+    transition: 0.3s;
+}
