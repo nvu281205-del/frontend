@@ -1,6 +1,7 @@
+import { data } from "./data";
 import "./ImgVideo.css"
 import {useRef} from "react"
-export default function ImgVideo({imgSrc, title, index,video,Language}) {
+export default function ImgVideo({imgSrc, title, position,video,Language,setCurrentIndex}) {
     const videoRef = useRef(null);
     return (
         <>
@@ -8,13 +9,13 @@ export default function ImgVideo({imgSrc, title, index,video,Language}) {
                 <img src={imgSrc} alt={title} />
                 <video src={video} ref={videoRef}  onMouseEnter={()=>videoRef.current.play()} onMouseLeave={() => videoRef.current.pause()}></video>
            {Language==="vi"?(<button className="detail-button">Xem chi tiết</button>):(<button className="detail-button"> View Details</button>)}     
-                {index%2===0 &&( 
-                <button class="back-button">
-                <span class="arrow-left">&#8249;</span>
+                {position==="left" &&( 
+                <button className="back-button" onClick={()=>setCurrentIndex((prevIndex)=>(prevIndex - 1 + data.length)%data.length)}>
+                <span className="arrow-left">&#8249;</span>
                  </button>)}
-                 {index%2!==0 &&(
-                 <button class="next-button">
-                 <span class="arrow-right">&#8250;</span>
+                 {position==="right" &&(
+                 <button className="next-button" onClick={()=>setCurrentIndex((prevIndex)=>(prevIndex+1)%data.length)}>
+                 <span className="arrow-right">&#8250;</span>
                 </button>)}
             </div>
         </>

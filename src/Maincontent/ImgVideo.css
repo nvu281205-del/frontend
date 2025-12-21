@@ -54,7 +54,7 @@ left: 18px;
    transform: translateY(-60%);
     left: 0;
    background-color: rgba(152, 151, 146, 0.5);
-    padding:6px 15px 6px 12px;
+    padding:6px 15px 8px 12px;
     cursor: pointer;
      border-radius: 0 4px 4px 0;
     border: none;
@@ -78,7 +78,7 @@ color: rgba(255, 255, 255, 0.6);
    transform: translateY(-60%);
     right: 0;
    background-color: rgba(152, 151, 146, 0.5);
-    padding:6px 12px 6px 15px;
+    padding:6px 12px 8px 15px;
     margin-left: 1px;
     cursor: pointer;
      border-radius: 4px 0px 0px 4px;
@@ -109,6 +109,7 @@ color: rgba(255, 255, 255, 0.6);
     border-radius: 50%;
     cursor: pointer;
 }
-.dot:active{
-    background-color: #54c273;
+.dot.active {
+  background-color: #54c273;
 }
+
