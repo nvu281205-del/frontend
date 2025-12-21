@@ -1,21 +1,18 @@
-
+import ImgVideo from "./ImgVideo"
+import {data} from "./data"
+import {useState} from "react"
 import "./Maincontent.css"
-export default function Maincontent({imgSrc,title,index}) {
+export default function Maincontent({Language}) {
+    const [currentIndex, setCurrentIndex] = useState(0);
     return (
         <>
-        <main>
-            <div className="ImgVideo">
-                <img src={imgSrc} alt={title} />
-                <button className="detail-button">Xem chi tiết</button>
-                {index%2===0 &&( 
-                <button class="back-button">
-                <span class="arrow-left">&#8249;</span>
-                 </button>)}
-                 {index%2!==0 &&(
-                 <button class="next-button">
-                 <span class="arrow-right">&#8250;</span>
-                </button>)}
-            </div>
+          <main>
+        <div className='Container'>
+    {data.map((item,index)=>(<ImgVideo {...item} index={index} key={item.title} Language={Language}/>))}
+        </div>
+         <div className="dots">
+   {data.map((_,index)=>(<span className={`dot ${index===currentIndex ? "active":""}`} key={index} onClick={()=>setCurrentIndex(index)}></span>))}
+       </div>
         </main>
         </>
     )

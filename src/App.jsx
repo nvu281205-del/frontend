@@ -1,4 +1,4 @@
-import { data } from './Maincontent/data.js';
+
 import Navmenu from './Navmenu/Navmenu.jsx';
 import './App.css'
 import { useState } from 'react'
@@ -10,9 +10,7 @@ function App() {
     <>
     <Header Language={Language} Setlanguage={Setlanguage}></Header>
     <Navmenu></Navmenu>
-     <div className='Container'>
-    {data.map((item,index)=>(<Maincontent {...item} index={index} key={item.title}/>))}
-    </div>
+    <Maincontent Language={Language}></Maincontent>
     </>
   )
 }
