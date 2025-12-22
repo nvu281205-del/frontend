@@ -1,6 +1,7 @@
 
 #thumbimage {
-    width:200px ;
-    height: 300px;
-    border-radius: 4px;
+    width:250px ;
+    height: 340px;
+    border-radius: 10px;
+    cursor: pointer;
 }

@@ -1,10 +1,65 @@
+.Thumb{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 10px;
+}
 .Thumb span {
+    font-weight:600;
     color:white;
     font-size: 18px;
     font-family: Arial, Helvetica, sans-serif;
-    margin:10px;
+    margin:10px 80px;
 }
-.thumb-image {
+.thumb-images {
+      width: fit-content; 
+    position: relative;
+    justify-content: center;
     display: flex;
-    gap: 10px;
+    gap: 15px;
+    margin: 0 auto;
+      transition: transform 0.5s ease;
 }
+.prev-button{
+     align-items: center;
+  justify-content: center;
+    width: 40px;          /* cố định chiều rộng */
+  height: 40px;
+  display: flex;
+   background-color: rgba(152, 151, 146, 0.5);
+    border-radius: 0 4px 4px 0;
+    border: none;
+    position:absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-60%);
+}
+.forward-button{
+    align-items: center;
+  justify-content: center;
+    width: 40px;          /* cố định chiều rộng */
+  height: 40px;
+  display: flex;
+   background-color: rgba(152, 151, 146, 0.5);
+    border-radius: 4px 0px 0px 4px;
+    border: none;
+    position:absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-60%);
+}
+ .prev-button:hover{
+     background-color:black;
+    transition: 0.3s;
+}
+.prev-button:hover span{
+    color: white;
+}
+.forward-button:hover{
+    background-color:black;
+    transition: 0.3s;
+}
+.forward-button:hover span{
+    color: white;
+}
+
