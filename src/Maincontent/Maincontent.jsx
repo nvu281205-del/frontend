@@ -1,8 +1,9 @@
 import ImgVideo from "./ImgVideo"
-import {data,data2} from "./data"
+import {data,data2,ForYou} from "./data"
 import {useState} from "react"
 import "./Maincontent.css"
 import Thumb from "./Thumb";
+import Content from "./Content";
 export default function Maincontent({Language}) {
     const [mainIndex, setMainIndex] = useState(0);   // cho ImgVideo
 const [thumbIndex, setThumbIndex] = useState(0); // cho Thumb
@@ -40,6 +41,11 @@ const [thumbIndex, setThumbIndex] = useState(0); // cho Thumb
       <span>&#8250;</span>
       </button>
           </div>
+        </div>
+
+        <div className="ForYou">
+          <span className="topic"> Dành cho bạn</span>
+          <div style={{display:"flex", gap:"10px",justifyContent:"center"}}> {ForYou.map((i)=>(<Content {...i} key={i.title}/>))}</div>
         </div>
         </main>
         

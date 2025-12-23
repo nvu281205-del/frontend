@@ -1,27 +1,30 @@
-import Thumb1 from '../Assets/Thumb1.jpg';
-import Thumb2 from '../Assets/Thumb2.jpg';
-import Thumb3 from '../Assets/Thumb3.jpg';
-import Thumb4 from '../Assets/Thumb4.jpg';
+import Thumb1 from '../Assets/ImgVideo/Thumb1.jpg';
+import Thumb2 from '../Assets/ImgVideo/Thumb2.jpg';
+import Thumb3 from '../Assets/ImgVideo/Thumb3.jpg';
+import Thumb4 from '../Assets/ImgVideo/Thumb4.jpg';
 import Video4 from '../video/Video4.mp4';
 import Video1 from '../video/Video1.mp4';
 import Video3 from '../video/Video3.mp4';
-import img1 from "../Assets/img1.webp";
-import img2 from "../Assets/img2.webp";
-import img3 from "../Assets/img3.webp";
-import img4 from "../Assets/img4.webp";
-import img5 from "../Assets/img5.webp";
-import img6 from "../Assets/img6.webp";
-import img7 from "../Assets/img7.webp";
-import img8 from "../Assets/img8.webp";
-import img9 from "../Assets/img9.webp";
-import img10 from "../Assets/img10.webp";
-import img11 from "../Assets/img11.webp";
-import img12 from "../Assets/img12.webp";
-import img13 from "../Assets/img13.webp";
-import img14 from "../Assets/img14.webp";
-import img15 from "../Assets/img15.webp";
-import img16 from "../Assets/img16.webp";
-
+import img1 from "../Assets/Special events/img1.webp";
+import img2 from "../Assets/Special events/img2.webp";
+import img3 from "../Assets/Special events/img3.webp";
+import img4 from "../Assets/Special events/img4.webp";
+import img5 from "../Assets/Special events/img5.webp";
+import img6 from "../Assets/Special events/img6.webp";
+import img7 from "../Assets/Special events/img7.webp";
+import img8 from "../Assets/Special events/img8.webp";
+import img9 from "../Assets/Special events/img9.webp";
+import img10 from "../Assets/Special events/img10.webp";
+import img11 from "../Assets/Special events/img11.webp";
+import img12 from "../Assets/Special events/img12.webp";
+import img13 from "../Assets/Special events/img13.webp";
+import img14 from "../Assets/Special events/img14.webp";
+import img15 from "../Assets/Special events/img15.webp";
+import img16 from "../Assets/Special events/img16.webp";
+import pic1 from "../Assets/For You/pic1.jpg"
+import pic2 from "../Assets/For You/pic2.jpg"
+import pic3 from "../Assets/For You/pic3.jpg"
+import pic4 from "../Assets/For You/pic4.jpg"
 export const data=[
     {
         imgSrc:Thumb1,
@@ -104,4 +107,30 @@ export const data2 =[
         imgSrc:img16,
         title:"img16"
     },
+]
+export const ForYou = [
+    {
+        imgSrc:pic1,
+        title:"Sân Khấu Hồng Vân:Ngôi Nhà Hoang(Người Vợ Ma P2)",
+        price:"Từ 300.000đ",
+        Date:"28 tháng 12,2025"
+    }, 
+    {
+        imgSrc:pic2,
+        title:"Sân Khấu Thế Giới Trẻ:Căn nhà ma quái ",
+        price:"Từ 300.000đ",
+        Date:"27 tháng 12,2025"
+    },
+    {
+        imgSrc:pic3,
+        title:"Triển lãm nghệ thuật ánh sáng",
+        price:"Từ 150.000đ",
+        Date:"27 tháng 12,2025"
+    },
+     {
+        imgSrc:pic4,
+        title:"pic4",
+        price:"Từ 150.000đ",
+        Date:"27 tháng 12,2025"
+    }
 ]

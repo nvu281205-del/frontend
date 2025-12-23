@@ -62,4 +62,14 @@
 .forward-button:hover span{
     color: white;
 }
-
+.topic{
+    font-weight:600;
+    color:white;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin:10px 80px;
+}
+.ForYou{
+    margin-top: 50px;
+   
+}

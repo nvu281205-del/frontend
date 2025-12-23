@@ -1,0 +1,24 @@
+.content{
+margin-top: 15px;
+   width: 320px;
+   height: 280px;
+   display: flex;
+   flex-direction: column;
+   gap: 5px;
+}
+.content img{
+    width: 320px;
+    border-radius: 10px;
+    border: none;
+}
+.content strong{
+    color: #54c273;
+}
+.content h3{
+    color: white;
+    width: 300px;
+    font-size: 15px;
+}
+.content span{
+    color: white;
+}
