@@ -1,5 +1,5 @@
 import ImgVideo from "./ImgVideo"
-import {data,data2,ForYou} from "./data"
+import {data,data2,ForYou, ThisMonth, ThisWeekend} from "./data"
 import {useState} from "react"
 import "./Maincontent.css"
 import Thumb from "./Thumb";
@@ -7,6 +7,7 @@ import Content from "./Content";
 export default function Maincontent({Language}) {
     const [mainIndex, setMainIndex] = useState(0);   // cho ImgVideo
 const [thumbIndex, setThumbIndex] = useState(0); // cho Thumb
+const[date,setDate]=useState("Weekend");
     const currentitem=data[mainIndex];
     const nextitem=data[(mainIndex+1)%data.length];
     const VisibleThumb = data2.slice(thumbIndex,thumbIndex+5);
@@ -20,7 +21,7 @@ const [thumbIndex, setThumbIndex] = useState(0); // cho Thumb
    {data.map((_,index)=>(<span className={`dot ${index===mainIndex ? "active":""}`} key={index} onClick={()=>setMainIndex(index)}></span>))}
        </div>
         <div className="Thumb">
-        {Language==="vi"?(<span>Sự kiện đặc biệt</span>):(<span>Special events</span>)}
+        <span className="topic">{Language==="vi"?"Sự kiện đặc biệt":"Special events"}</span>
             <div className="thumb-images">
     {VisibleThumb.map((item)=>(<Thumb {...item} key={item.title}/>))}
     {thumbIndex>0&&( <button className="prev-button" onClick={()=>setThumbIndex((thumbIndex)=>{
@@ -45,7 +46,19 @@ const [thumbIndex, setThumbIndex] = useState(0); // cho Thumb
 
         <div className="ForYou">
           <span className="topic"> Dành cho bạn</span>
-          <div style={{display:"flex", gap:"10px",justifyContent:"center"}}> {ForYou.map((i)=>(<Content {...i} key={i.title}/>))}</div>
+          <div style={{display:"flex", gap:"10px",justifyContent:"center"}}>
+             {ForYou.map((i)=>(<Content {...i} key={i.title}/>))}</div>
+        </div>
+        <div className="ThisWeekend">
+          <div className="special-topic">
+            <span onClick={()=>setDate("Weekend")}>Cuối tuần này</span>
+                <span onClick={()=>setDate("Month")}>Tháng này</span>
+                 <div className={date==="Month"?"greenlineM":"greenlineW"}></div> 
+          </div>
+         <div style={{display:"flex", gap:"10px",justifyContent:"center",marginTop:"10px"}}>
+            
+             {(date==="Weekend" ? ThisWeekend:ThisMonth).map((i)=>(<Content {...i} key={i.title}/>))}
+             </div>
         </div>
         </main>
         

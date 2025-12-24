@@ -6,12 +6,12 @@ import Header from './Head/Header.jsx'
 import Maincontent from './Maincontent/Maincontent.jsx';
 function App() {
   const[Language,Setlanguage]=useState("vi");
-  return (
-    <>
+  return ( 
+   <>
     <Header Language={Language} Setlanguage={Setlanguage}></Header>
     <Navmenu></Navmenu>
     <Maincontent Language={Language}></Maincontent>
-    </>
+   </>
   )
 }
 

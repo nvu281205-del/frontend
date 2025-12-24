@@ -4,13 +4,6 @@
     gap: 5px;
     margin-top: 10px;
 }
-.Thumb span {
-    font-weight:600;
-    color:white;
-    font-size: 18px;
-    font-family: Arial, Helvetica, sans-serif;
-    margin:10px 80px;
-}
 .thumb-images {
       width: fit-content; 
     position: relative;
@@ -63,13 +56,46 @@
     color: white;
 }
 .topic{
-    font-weight:600;
+    font-weight:550;
     color:white;
-    font-size: 18px;
+    font-size: 16px;
     font-family: Arial, Helvetica, sans-serif;
     margin:10px 80px;
 }
 .ForYou{
     margin-top: 50px;
-   
+}
+.special-topic{
+    position: relative;
+    margin-left: 80px;
+    display: flex;
+    gap: 15px;
+}
+.special-topic span{
+    cursor: pointer;
+     font-weight:550;
+    color:white;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.ThisWeekend {
+    margin-top: 50px;
+}
+.greenlineW{
+    position:absolute;
+    top: 23px;
+    left: 2px;
+    width: 100px;
+    height: 4px;
+    border-radius: 100px;
+    background-color: #54c273;
+}
+.greenlineM{
+     position:absolute;
+    top: 23px;
+    left: 120px;
+    width: 80px;
+    height: 4px;
+    border-radius: 100px;
+    background-color: #54c273;
 }

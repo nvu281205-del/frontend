@@ -3,7 +3,7 @@ import ticket from "../assets/ticket.png"
 import searchIcon from "../assets/search.png"
 import vietnamIcon from "../assets/vietnamIcon.webp"
 import englishIcon from "../assets/englishIcon.png"
-export default function Header({Setlanguage,Language}) { //Destructering props để truyền thuộc tính
+export default function Header({Setlanguage,Language}) {//Destructering props để truyền thuộc tính
     return (
         <>
             <header>

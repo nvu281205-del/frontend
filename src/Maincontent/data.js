@@ -25,6 +25,16 @@ import pic1 from "../Assets/For You/pic1.jpg"
 import pic2 from "../Assets/For You/pic2.jpg"
 import pic3 from "../Assets/For You/pic3.jpg"
 import pic4 from "../Assets/For You/pic4.jpg"
+import thisw1 from "../Assets/ThisWeekend/img1.webp"
+import thisw2 from "../Assets/ThisWeekend/img2.webp"
+import thisw3 from "../Assets/ThisWeekend/img3.webp"
+import thisw4 from "../Assets/ThisWeekend/img4.webp"
+import thism1 from "../Assets/ThisMonth/img1.webp"
+import thism2 from "../Assets/ThisMonth/img2.webp"
+import thism3 from "../Assets/ThisMonth/img3.webp"
+import thism4 from "../Assets/ThisMonth/img4.webp"
+
+
 export const data=[
     {
         imgSrc:Thumb1,
@@ -130,6 +140,58 @@ export const ForYou = [
      {
         imgSrc:pic4,
         title:"pic4",
+        price:"Từ 150.000đ",
+        Date:"27 tháng 12,2025"
+    }
+]
+export const  ThisWeekend=[
+    {
+        imgSrc:thisw1,
+        title:"thisw1",
+        price:"Từ 150.000đ",
+        Date:"27 tháng 12,2025"
+    },
+    {
+        imgSrc:thisw2,
+        title:"thisw2",
+        price:"Từ 150.000đ",
+        Date:"27 tháng 12,2025"
+    },
+    {
+        imgSrc:thisw3,
+        title:"thisw4",
+        price:"Từ 150.000đ",
+        Date:"27 tháng 12,2025"
+    },
+    {
+        imgSrc:thisw4,
+        title:"Sân Khấu Thế Giới Trẻ:Căn nhà ma quá",
+        price:"Từ 150.000đ",
+        Date:"27 tháng 12,2025"
+    },
+]
+export const ThisMonth=[
+    {
+         imgSrc:thism1,
+        title:"thism1",
+        price:"Từ 150.000đ",
+        Date:"27 tháng 12,2025"
+    },
+    {
+         imgSrc:thism2,
+        title:"thism2",
+        price:"Từ 150.000đ",
+        Date:"27 tháng 12,2025"
+    },
+    {
+         imgSrc:thism3,
+        title:"thism3",
+        price:"Từ 150.000đ",
+        Date:"27 tháng 12,2025"
+    },
+    {
+         imgSrc:thism4,
+        title:"thism4",
         price:"Từ 150.000đ",
         Date:"27 tháng 12,2025"
     }
