@@ -9,7 +9,7 @@ function App() {
   return ( 
    <>
     <Header Language={Language} Setlanguage={Setlanguage}></Header>
-    <Navmenu></Navmenu>
+    <Navmenu Language={Language} ></Navmenu>
     <Maincontent Language={Language}></Maincontent>
    </>
   )

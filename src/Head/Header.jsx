@@ -19,11 +19,11 @@ export default function Header({Setlanguage,Language}) {//Destructering props đ
                         <button style={{marginRight:"10px"}}>Search</button></>)}
                     </div>
                    <div style={{display:"flex",gap:"20px",marginRight:"20px"}}>
-                     <div>  <button className="eventCreate">Tạo sự kiện</button></div>
+                     <div>  <button className="eventCreate">{Language==="vi"?"Tạo sự kiện":"Create event"}</button></div>
                      
                     <div className="MyTicket">
                    <img src={ticket} alt="Myticket" />
-                   <button>Vé của tôi</button>
+                   <button>{Language==="vi"?"Vé của tôi":"My ticket"}</button>
                     </div>
                     <div className="Login">
                      {Language==="en"?
@@ -36,7 +36,7 @@ export default function Header({Setlanguage,Language}) {//Destructering props đ
                     </div>
 
                     <div className="Language">
-                    <img src={vietnamIcon} alt="Vietnam" />
+                {Language==="vi"? <img src={vietnamIcon} alt="Vietnam" />: <img src={englishIcon} alt="Vietnam" />}   
                     <button>▼</button>
                     <div className="Choose" hidden>
                     <button onClick={()=>Setlanguage("vi")}>

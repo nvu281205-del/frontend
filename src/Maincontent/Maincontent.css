@@ -63,7 +63,11 @@
     margin:10px 80px;
 }
 .ForYou{
+    position: relative;
     margin-top: 50px;
+}
+.ForYou span{
+     font-family: Arial, Helvetica, sans-serif;
 }
 .special-topic{
     position: relative;
@@ -98,4 +102,27 @@
     height: 4px;
     border-radius: 100px;
     background-color: #54c273;
+}
+.Detail span{
+    color:#a9b3ac;
+    font-size: 14px;
+    font-weight: lighter;
+}
+.Detail {
+    top: -10px;
+    position: absolute;
+    right: 80px;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+.VPBank {
+   display: flex;
+   justify-content: center;
+margin-top: 50px;
+}
+.VPBank img{
+   border-radius: 10px;
+    width: 1310px;
+    height: 165px;
 }

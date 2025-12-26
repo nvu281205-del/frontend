@@ -33,6 +33,22 @@ import thism1 from "../Assets/ThisMonth/img1.webp"
 import thism2 from "../Assets/ThisMonth/img2.webp"
 import thism3 from "../Assets/ThisMonth/img3.webp"
 import thism4 from "../Assets/ThisMonth/img4.webp"
+import music1 from "../Assets/Music/img1.jpg"
+import music2 from "../Assets/Music/img2.jpg"
+import music3 from "../Assets/Music/img3.jpg"
+import music4 from "../Assets/Music/img4.jpg"
+import ta1 from "../Assets/Theater & Art/img1.jpg"
+import ta2 from "../Assets/Theater & Art/img2.jpg"
+import ta3 from "../Assets/Theater & Art/img3.jpg"
+import ta4 from "../Assets/Theater & Art/img4.jpeg"
+import ae1 from "../Assets/Att & Exp/img1.jpg"
+import ae2 from "../Assets/Att & Exp/img2.jpg"
+import ae3 from "../Assets/Att & Exp/img3.jpeg"
+import ae4 from "../Assets/Att & Exp/img4.jpg"
+import ot1 from "../Assets/Others/img1.jpg"
+import ot2 from "../Assets/Others/img2.jpg"
+import ot3 from "../Assets/Others/img3.jpg"
+import ot4 from "../Assets/Others/img4.jpg"
 
 
 export const data=[
@@ -196,3 +212,110 @@ export const ThisMonth=[
         Date:"27 tháng 12,2025"
     }
 ]
+
+export const Music=[
+    {
+         imgSrc:music1,
+        title:"music1",
+        price:"Từ 150.000đ",
+        Date:"27 tháng 12,2025"
+    },
+    {
+         imgSrc:music2,
+        title:"music2",
+        price:"Từ 150.000đ",
+        Date:"27 tháng 12,2025"
+    },
+    {
+         imgSrc:music3,
+        title:"music3",
+        price:"Từ 150.000đ",
+        Date:"27 tháng 12,2025"
+    },
+    {
+         imgSrc:music4,
+        title:"music4",
+        price:"Từ 150.000đ",
+        Date:"27 tháng 12,2025"
+    },
+]
+export const Ta=[
+   {
+         imgSrc:ta1,
+        title:"ta1",
+        price:"Từ 150.000đ",
+        Date:"27 tháng 12,2025"
+    },
+   {
+         imgSrc:ta2,
+        title:"ta2",
+        price:"Từ 150.000đ",
+        Date:"27 tháng 12,2025"
+    },
+   {
+         imgSrc:ta3,
+        title:"ta3",
+        price:"Từ 150.000đ",
+        Date:"27 tháng 12,2025"
+    },
+   {
+         imgSrc:ta4,
+        title:"ta4",
+        price:"Từ 150.000đ",
+        Date:"27 tháng 12,2025"
+    },
+    
+]
+ export const AE=[
+     {
+         imgSrc:ae1,
+        title:"ae1",
+        price:"Từ 150.000đ",
+        Date:"27 tháng 12,2025"
+    },
+     {
+         imgSrc:ae2,
+        title:"ae2",
+        price:"Từ 150.000đ",
+        Date:"27 tháng 12,2025"
+    },
+     {
+         imgSrc:ae3,
+        title:"ae3",
+        price:"Từ 150.000đ",
+        Date:"27 tháng 12,2025"
+    },
+     {
+         imgSrc:ae4,
+        title:"ae4",
+        price:"Từ 150.000đ",
+        Date:"27 tháng 12,2025"
+    },
+    
+ ]
+ export const Others=[
+      {
+         imgSrc:ot1,
+        title:"ae4",
+        price:"Từ 150.000đ",
+        Date:"27 tháng 12,2025"
+    },
+      {
+         imgSrc:ot2,
+        title:"ae4",
+        price:"Từ 150.000đ",
+        Date:"27 tháng 12,2025"
+    },
+      {
+         imgSrc:ot3,
+        title:"ae4",
+        price:"Từ 150.000đ",
+        Date:"27 tháng 12,2025"
+    },
+      {
+         imgSrc:ot4,
+        title:"ae4",
+        price:"Từ 150.000đ",
+        Date:"27 tháng 12,2025"
+    },
+ ]

@@ -1,9 +1,10 @@
 import ImgVideo from "./ImgVideo"
-import {data,data2,ForYou, ThisMonth, ThisWeekend} from "./data"
+import {AE, data,data2,ForYou, Music, Others, Ta, ThisMonth, ThisWeekend} from "./data"
 import {useState} from "react"
 import "./Maincontent.css"
 import Thumb from "./Thumb";
 import Content from "./Content";
+import VPBank from "../assets/VPBank/VPBank DAY.webp"
 export default function Maincontent({Language}) {
     const [mainIndex, setMainIndex] = useState(0);   // cho ImgVideo
 const [thumbIndex, setThumbIndex] = useState(0); // cho Thumb
@@ -20,6 +21,7 @@ const[date,setDate]=useState("Weekend");
          <div className="dots">
    {data.map((_,index)=>(<span className={`dot ${index===mainIndex ? "active":""}`} key={index} onClick={()=>setMainIndex(index)}></span>))}
        </div>
+
         <div className="Thumb">
         <span className="topic">{Language==="vi"?"Sự kiện đặc biệt":"Special events"}</span>
             <div className="thumb-images">
@@ -49,17 +51,51 @@ const[date,setDate]=useState("Weekend");
           <div style={{display:"flex", gap:"10px",justifyContent:"center"}}>
              {ForYou.map((i)=>(<Content {...i} key={i.title}/>))}</div>
         </div>
+
         <div className="ThisWeekend">
           <div className="special-topic">
             <span onClick={()=>setDate("Weekend")}>Cuối tuần này</span>
                 <span onClick={()=>setDate("Month")}>Tháng này</span>
                  <div className={date==="Month"?"greenlineM":"greenlineW"}></div> 
+                 <div className="Detail">  <span>Xem thêm</span> <span style={{fontSize:"25px",marginBottom:"5px"}}>&#8250;</span>    </div>
           </div>
          <div style={{display:"flex", gap:"10px",justifyContent:"center",marginTop:"10px"}}>
-            
              {(date==="Weekend" ? ThisWeekend:ThisMonth).map((i)=>(<Content {...i} key={i.title}/>))}
-             </div>
         </div>
+        </div>
+
+        <div className="VPBank">
+          <img src={VPBank} alt="VPBank Day" />
+        </div>
+
+       <div className="ForYou">
+          <span className="topic">Nhạc sống</span>
+          <div style={{display:"flex", gap:"10px",justifyContent:"center",marginTop:"10px"}}>
+             {Music.map((i)=>(<Content {...i} key={i.title}/>))}</div>
+          <div className="Detail"><span>Xem thêm</span> <span style={{fontSize:"25px",marginBottom:"5px"}}>&#8250;</span></div>    
+        </div>
+
+        <div className="ForYou">
+          <span className="topic">Sân khấu và nghệ thuật</span>
+          <div style={{display:"flex", gap:"10px",justifyContent:"center",marginTop:"10px"}}>
+             {Ta.map((i)=>(<Content {...i} key={i.title}/>))}</div>
+          <div className="Detail"><span>Xem thêm</span> <span style={{fontSize:"25px",marginBottom:"5px"}}>&#8250;</span></div>    
+        </div>
+
+        <div className="ForYou">
+          <span className="topic">Tham quan và trải nghiệm </span>
+          <div style={{display:"flex", gap:"10px",justifyContent:"center",marginTop:"10px"}}>
+             {AE.map((i)=>(<Content {...i} key={i.title}/>))}</div>
+          <div className="Detail"><span>Xem thêm</span> <span style={{fontSize:"25px",marginBottom:"5px"}}>&#8250;</span></div>    
+        </div>
+
+        <div className="ForYou">
+          <span className="topic">Thể loại khác </span>
+          <div style={{display:"flex", gap:"10px",justifyContent:"center",marginTop:"10px"}}>
+             {Others.map((i)=>(<Content {...i} key={i.title}/>))}</div>
+          <div className="Detail"><span>Xem thêm</span> <span style={{fontSize:"25px",marginBottom:"5px"}}>&#8250;</span></div>    
+        </div>
+
         </main>
         
     )
