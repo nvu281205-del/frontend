@@ -1,13 +1,16 @@
 import ImgVideo from "./ImgVideo"
-import {AE, data,data2,ForYou, Music, Others, Ta, ThisMonth, ThisWeekend} from "./data"
+import {AE, banner, data,data2,ForYou, Music, Others, Ta, ThisMonth, ThisWeekend} from "./data"
 import {useState} from "react"
 import "./Maincontent.css"
 import Thumb from "./Thumb";
 import Content from "./Content";
 import VPBank from "../assets/VPBank/VPBank DAY.webp"
+import Banner from "./Banner";
+
 export default function Maincontent({Language}) {
     const [mainIndex, setMainIndex] = useState(0);   // cho ImgVideo
 const [thumbIndex, setThumbIndex] = useState(0); // cho Thumb
+
 const[date,setDate]=useState("Weekend");
     const currentitem=data[mainIndex];
     const nextitem=data[(mainIndex+1)%data.length];
@@ -64,9 +67,9 @@ const[date,setDate]=useState("Weekend");
         </div>
         </div>
 
-        <div className="VPBank">
+        <a  href="https://promotion.ticketbox.vn/?utm_medium=banner-cate-music&utm_source=tkb-homepage&_gl=1*1k1wr58*_ga*MTkyNzgwNzgwNC4xNzY1Nzg5NzM3*_ga_RKZBE6WS3R*czE3NjY4MjA4MDgkbzI1JGcwJHQxNzY2ODIxMDczJGo2MCRsMCRoNTMyODE4MDcz"className="VPBank">
           <img src={VPBank} alt="VPBank Day" />
-        </div>
+        </a>
 
        <div className="ForYou">
           <span className="topic">Nhạc sống</span>
@@ -96,6 +99,14 @@ const[date,setDate]=useState("Weekend");
           <div className="Detail"><span>Xem thêm</span> <span style={{fontSize:"25px",marginBottom:"5px"}}>&#8250;</span></div>    
         </div>
 
+        <div className="banner">
+         <span className="topic">Điểm đến thú vị</span>
+        <div style={{display:"flex",gap:"12px",justifyContent:"center",marginTop:"15px"}}>
+         {banner.map((i)=>(<Banner key={i.title} {...i}/>))}
+        </div>
+        </div>
+
+       
         </main>
         
     )

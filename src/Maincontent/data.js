@@ -49,7 +49,10 @@ import ot1 from "../Assets/Others/img1.jpg"
 import ot2 from "../Assets/Others/img2.jpg"
 import ot3 from "../Assets/Others/img3.jpg"
 import ot4 from "../Assets/Others/img4.jpg"
-
+import other from "../Assets/city/Other.webp"
+import hncity from "../Assets/city/HNcity.webp"
+import dlcity from "../Assets/city/DaLatcity.webp"
+import hcmcity from "../Assets/city/HCMcity.webp"
 
 export const data=[
     {
@@ -317,5 +320,23 @@ export const Ta=[
         title:"ae4",
         price:"Từ 150.000đ",
         Date:"27 tháng 12,2025"
+    },
+ ]
+ export const banner=[
+    {
+        imgSrc:hncity,
+        title:"Hà Nội "
+    },
+    {
+        imgSrc:dlcity,
+        title:"Đà Lạt"
+    },
+    {
+        imgSrc:hcmcity,
+        title:"Tp Hồ Chí Minh"
+    },
+    {
+        imgSrc:other,
+        title:"Vị trí khác"
     },
  ]
