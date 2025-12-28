@@ -67,7 +67,7 @@ const[date,setDate]=useState("Weekend");
         </div>
         </div>
 
-        <a  href="https://promotion.ticketbox.vn/?utm_medium=banner-cate-music&utm_source=tkb-homepage&_gl=1*1k1wr58*_ga*MTkyNzgwNzgwNC4xNzY1Nzg5NzM3*_ga_RKZBE6WS3R*czE3NjY4MjA4MDgkbzI1JGcwJHQxNzY2ODIxMDczJGo2MCRsMCRoNTMyODE4MDcz"className="VPBank">
+        <a className="VPBank">
           <img src={VPBank} alt="VPBank Day" />
         </a>
 

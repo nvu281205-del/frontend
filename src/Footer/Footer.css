@@ -1,4 +1,5 @@
 footer{
+    position: relative;
     background-color: #3a3f4e;
     width: 100%;
     height: auto;
@@ -6,12 +7,22 @@ footer{
     box-sizing: border-box;
 }
 .footer{
-     display: flex;
-      justify-content: space-around;
+    display: flex;
+    justify-content: space-around;
     margin-top: 50px;
     gap: 50px;
     margin-right: 60px;
 }
+footer hr {
+    position: absolute;
+  border: none;            
+  height: 1px;              
+  background-color: rgba(137, 135, 135, 0.2); 
+  width: 100%;   
+left: 0;        
+bottom:30%;  
+}
+
 .leftfoot{
     display: flex;
     flex-direction: column;
@@ -41,4 +52,53 @@ footer{
 }
 .ph1 span:hover{
     color: white;
+}
+.app a img{
+    cursor: pointer;
+    width: 150px;
+    height: 45px;
+}
+.app{
+    width: 100px;
+    display: flex;
+    gap: 3px;
+    flex-direction: column;
+}
+.app span{
+    width: 250px;
+    color: rgb(188, 183, 183);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+}
+.multi{
+    margin-top: 80px;
+     gap: 180px;
+    margin-right: 80px;
+    display: flex;
+    justify-content: space-around;
+}
+.fu span{
+     color: rgb(188, 183, 183);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+}
+.MXH{
+    cursor: pointer;
+    display: flex;
+    gap: 5px;
+}
+.MXH img{
+    width: 25px;
+    height: 25px;
+}
+.lan span{
+  color: rgb(188, 183, 183);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    font-weight: bold;   
+}
+.lan img{
+    cursor: pointer;
 }

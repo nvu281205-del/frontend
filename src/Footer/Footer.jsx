@@ -2,6 +2,16 @@ import phone from "../assets/phone.svg"
 import email from "../assets/email.svg"
 import posi from "../assets/posi.svg"
 import "./Footer.css"
+import ggplay from "../assets/ggplay.png"
+import appstore from "../assets/appstore.png"
+import fb from "../assets/MXH/fb.png"
+import ing from "../assets/MXH/in.png"
+import ins from "../assets/MXH/ins.png"
+import tiktok from "../assets/MXH/tik.png"
+import haveno from "../assets/MXH/Ihavenoidea.png"
+ import vietnam from "../assets/language/vn.svg"
+import english from "../assets/language/en.svg"
+
 export default function Footer(){
     return (
         <>
@@ -55,6 +65,39 @@ export default function Footer(){
         </div>
         </div>
         </div>
+             <hr/>
+        <div className="multi">
+         <div className="app">
+        <span>Ứng dụng Ticketbox</span>
+        <a> <img src={ggplay} alt="" /> </a>
+          <a> <img src={appstore} alt="" /> </a>
+        </div>
+        <div className="app">
+        <span>Ứng dụng check-in cho Ban tổ chức</span>
+        <a> <img src={ggplay} alt="" /> </a>
+          <a> <img src={appstore} alt="" /> </a>
+        </div>
+        <div style={{display:"flex",flexDirection:"column",gap:'20px'}}>
+        <div className="fu">
+          <span>Follow Us</span>
+          <div className="MXH">
+            <img src={ing} alt="" />
+            <img src={ins} alt="" />
+            <img src={fb} alt="" />
+            <img src={tiktok} alt="" />
+            <img src={haveno} alt="" />
+          </div>
+        </div>
+        <div className="lan">
+         <span>Ngôn ngữ</span>
+         <div style={{display:"flex",gap:"5px"}}>
+          <img style={{width:"40px",height:"40px"}} src={vietnam} alt="" />
+           <img style={{width:"45px",height:"32px",marginTop:"3px"}} src={english} alt="" />
+         </div>
+        </div>
+        </div>
+        </div>
+       
         </footer>
         </>
     )

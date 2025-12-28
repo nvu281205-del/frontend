@@ -19,20 +19,20 @@ nav{
     align-items: center;
 }
 .search-container{
+    width: 270px;
+    height: 30px;
+     background-color: white;
+    padding:5px 45px 5px;
+    border-radius: 5px;
     position: relative;
     display: flex;
     align-items: center;
 }
 header input {
-     line-height: 30px;
+    line-height: 30px;
     outline: none;
-    background-color: white;
     border: none;
-    width: 270px;
-    height: 30px;
-    padding:5px 45px 5px;
-    border-radius: 5px;
-    
+    width: 200px;
 }
 #searchIcon{
     position: absolute;

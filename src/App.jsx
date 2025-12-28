@@ -12,7 +12,7 @@ function App() {
     <Header Language={Language} Setlanguage={Setlanguage}></Header>
     <Navmenu Language={Language} ></Navmenu>
     <Maincontent Language={Language}></Maincontent>
-    <Footer/>
+    <Footer Language={Language}/>
    </>
   )
 }
