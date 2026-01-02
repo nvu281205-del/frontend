@@ -7,8 +7,13 @@
     background-color: black;
     color: white;
 }
+.link{
+    text-decoration: none;
+    color: white;
+}
 .Navmenu span{
     cursor: pointer;
+    text-decoration: none;
    font-family: 'Poppins', sans-serif;
    font-size: 14px;
 }

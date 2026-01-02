@@ -1,25 +1,25 @@
 import "./Navmenu.css"
+import { Link } from "react-router-dom"
 export default function Navmenu({Language}) {
     return (
         <>
         {Language==="vi"?
         (<nav className="Navmenu">
-        <span>Nhạc sống</span>
-        <span>Sân khấu & Nghệ thuật</span>
-        <span>Thể Thao</span>
-        <span>Khác</span>
-        <span>Vé bán lại</span>
+          <Link to="/MoreConTent" className="link"><span>Nhạc sống</span></Link>
+          <Link to="/MoreConTent" className="link"><span>Sân khấu & Nghệ thuật</span></Link>
+          <Link to="/MoreConTent" className="link"><span>Thể Thao</span></Link>
+          <Link to="/MoreConTent" className="link"><span>Khác</span></Link>
+          <Link to="/MoreConTent" className="link"><span>Vé bán lại</span></Link>
       </nav>):(
         <nav className="Navmenu">
-        <span>Music</span>
-        <span>Theaters & Art</span>
-        <span>Sport</span>
-        <span>Others</span>
-        <span>Resale ticket</span>
+   <Link to="/MoreConTent" className="link"><span>Music</span></Link>
+          <Link to="/MoreConTent" className="link"><span>Theater & Art</span></Link>
+          <Link to="/MoreConTent" className="link"><span>Sport</span></Link>
+          <Link to="/MoreConTent" className="link"><span>Others</span></Link>
+          <Link to="/MoreConTent" className="link"><span>Resale Ticket</span></Link>
       </nav>
       )
       }
-      
         </>
     )
 }

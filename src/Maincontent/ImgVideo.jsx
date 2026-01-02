@@ -7,7 +7,7 @@ export default function ImgVideo({imgSrc, title, position,video,Language,setCurr
         <>
             <div className="ImgVideo">
                 <img src={imgSrc} alt={title} />
-                <video src={video} ref={videoRef}  onMouseEnter={()=>videoRef.current.play()} onMouseLeave={() => videoRef.current.pause()}></video>
+                <video src={video} ref={videoRef} muted onMouseEnter={()=>videoRef.current.play()} onMouseLeave={() => videoRef.current.pause()}></video>
            {Language==="vi"?(<button className="detail-button">Xem chi tiết</button>):(<button className="detail-button"> View Details</button>)}     
                 {position==="left" &&( 
                 <button className="back-button" onClick={()=>setCurrentIndex((prevIndex)=>(prevIndex - 1 + data.length)%datalength)}>
