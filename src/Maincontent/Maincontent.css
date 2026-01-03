@@ -5,7 +5,7 @@
     margin-top: 10px;
 }
 .thumb-images {
-      width: fit-content; 
+    width: fit-content; 
     position: relative;
     justify-content: center;
     display: flex;
@@ -26,6 +26,14 @@
     left: 0;
     top: 50%;
     transform: translateY(-60%);
+}
+.prev-button span{
+    color: #b8c4bc;
+    font-size: 18px;
+}
+.forward-button span{
+     color: #b8c4bc;
+     font-size: 18px;
 }
 .forward-button{
     align-items: center;
@@ -63,6 +71,7 @@
     margin:10px 80px;
 }
 .ForYou{
+    
     position: relative;
     margin-top: 50px;
 }

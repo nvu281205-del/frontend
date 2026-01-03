@@ -15,22 +15,57 @@ main{
    opacity: 0;
     transition: opacity 0.3s ease;
 }
+.svg{
+position: absolute;
+bottom: 20px;
+right: 10px;
+}
 .ImgVideo:hover video{
     opacity: 1;
 }
 .ImgVideo:hover img{
     opacity: 0;
 }
+.ImgVideo:hover .mute img{
+    opacity: 1;
+}
+.ImgVideo:hover .svg{
+    opacity: 0;
+}
 .Container{
+    transition: transform 0.5 ease;
     display: flex;
      gap:10px;
     justify-content: center;
+     position: relative;
+  display: flex;
+  box-sizing: border-box;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent;
+
+  transition: transform 0.5s ease-in-out;
+  will-change: transform;
 }
 .ImgVideo {
 position: relative;
     width: 650px;
     height: 350px;
 }
+.mute{
+    border: none;
+    background: none;
+bottom: 50px;
+right: 40px;
+position: absolute;
+cursor: pointer;
+}
+.mute img{
+opacity: 0;
+width: 35px;
+height: 35px;
+ transition: opacity 0.3s ease;
+}
+
 .detail-button{
 position: absolute;
 padding:8px;

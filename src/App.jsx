@@ -15,7 +15,7 @@ function App() {
     <BrowserRouter>
       <Navmenu Language={Language} ></Navmenu>
     <Routes>
-        <Route path="/" element={<Maincontent/>}/>
+        <Route path="/" element={<Maincontent Language={Language}/>}/>
       <Route path="/MoreContent" element={<MoreConTent/>}/>
     </Routes>
     </BrowserRouter>

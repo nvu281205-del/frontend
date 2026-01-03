@@ -3,7 +3,12 @@ import ticket from "../assets/ticket.png"
 import searchIcon from "../assets/search.png"
 import vietnamIcon from "../assets/vietnamIcon.webp"
 import englishIcon from "../assets/englishIcon.png"
-export default function Header({Setlanguage,Language}) {//Destructering props để truyền thuộc tính
+import {useState} from "react"
+export default function Header({Setlanguage,Language}) {//Destructering props để truyền thuộc tính  
+  const[change,setChange]=useState("")
+  function handleChange(e){
+    setChange(e.target.value);
+  }
     return (
         <>
             <header>
@@ -12,7 +17,7 @@ export default function Header({Setlanguage,Language}) {//Destructering props đ
                     <div className="search-container">
                              <img id="searchIcon" src={searchIcon} alt="search" />
                         {Language==="vi"?    
-                        (<><input type="text" placeholder="Bạn tìm gì hôm nay?"/>
+                        (<><input type="text" value={change} placeholder="Bạn tìm gì hôm nay?" onChange={handleChange}/>
                         <span ></span>
                         <button >Tìm kiếm</button></>): (<><input type="text" placeholder="What are you looking for?"/>
                         <span ></span>
