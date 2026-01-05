@@ -1,7 +1,21 @@
-export default function MoreContent(){
+import { useEffect,useState } from "react"
+import { useParams } from "react-router-dom"
+import Content from "../Maincontent/Content";
+import './MoreConTent.css'
+import GridContent from "./GridContent";
+export default function MoreContent({Language}){
+    const {titleSearch}= useParams();
+    const[data,setData]=useState([]);
+    useEffect(()=>{
+     fetch(`http://localhost:3000/events?category=${titleSearch}`)
+     .then(res=>res.json())
+     .then(json=>setData(json));
+    },[titleSearch])
     return (
-        <> 
-        <h1>Mỏe contne</h1>
+        <>
+        <div className="contain">
+       <GridContent data={data} Language={Language}/>
+       </div> 
         </>
     )
 }

@@ -13,14 +13,14 @@ export default function ImgVideo({imgSrc, title, position,video,Language,setCurr
                 <img src={imgSrc} alt={title} />  
                 (<video src={video} ref={videoRef} muted ></video>)
                 </div>
-                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" className="svg"><g clip-path="url(#play-videos_svg__clip0_8445_54189)" opacity="0.5">
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M5.333 5.333A2.667 2.667 0 002.667 8v16a2.667 2.667 0 002.666 2.667h21.334A2.667 2.667 0 0029.333 24V8a2.667 2.667 0 00-2.666-2.667H5.333zm15.148 11.752a1.333 1.333 0 000-2.17l-5.706-4.076c-.882-.63-2.108 0-2.108 1.085v8.152c0 1.084 1.226 1.715 2.108 1.085l5.706-4.076z" fill="#fff"></path>
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" className="svg"><g clipPath="url(#play-videos_svg__clip0_8445_54189)" opacity="0.5">
+                    <path fillRule="evenodd" clipRule="evenodd" d="M5.333 5.333A2.667 2.667 0 002.667 8v16a2.667 2.667 0 002.666 2.667h21.334A2.667 2.667 0 0029.333 24V8a2.667 2.667 0 00-2.666-2.667H5.333zm15.148 11.752a1.333 1.333 0 000-2.17l-5.706-4.076c-.882-.63-2.108 0-2.108 1.085v8.152c0 1.084 1.226 1.715 2.108 1.085l5.706-4.076z" fill="#fff"></path>
                     </g><defs><clipPath id="play-videos_svg__clip0_8445_54189">
                         <path fill="#fff" transform="translate(2.667 2.667)" d="M0 0h26.667v26.667H0z"></path></clipPath></defs></svg>
-                <buton className="mute" onClick={()=>{
+                <button className="mute" onClick={()=>{
                     videoRef.current.muted=!videoRef.current.muted;
                     setMute(videoRef.current.muted)
-                }}> <img src={mute?muted:unmuted} /></buton>
+                }}> <img src={mute?muted:unmuted} /></button>
                
            {Language==="vi"?(<button className="detail-button">Xem chi tiết</button>):(<button className="detail-button"> View Details</button>)}     
                 {position==="left" &&( 

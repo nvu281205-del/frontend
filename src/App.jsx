@@ -12,11 +12,15 @@ function App() {
   return ( 
    <>
     <Header Language={Language} Setlanguage={setLanguage}></Header>
+    
     <BrowserRouter>
-      <Navmenu Language={Language} ></Navmenu>
+   
     <Routes>
-        <Route path="/" element={<Maincontent Language={Language}/>}/>
-      <Route path="/MoreContent" element={<MoreConTent/>}/>
+        <Route path="/" element={ <>
+           <Navmenu Language={Language} ></Navmenu>
+          <Maincontent Language={Language}/> 
+          </>}/>
+      <Route path="/MoreConTent/:titleSearch" element={<MoreConTent Language={Language}/>}/>
     </Routes>
     </BrowserRouter>
     

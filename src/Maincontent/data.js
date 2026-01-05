@@ -142,25 +142,25 @@ export const ForYou = [
         imgSrc:pic1,
         title:"Sân Khấu Hồng Vân:Ngôi Nhà Hoang(Người Vợ Ma P2)",
         price:"Từ 300.000đ",
-        Date:"28 tháng 12,2025"
+        date:"28 tháng 12,2025"
     }, 
     {
         imgSrc:pic2,
         title:"Sân Khấu Thế Giới Trẻ:Căn nhà ma quái ",
         price:"Từ 300.000đ",
-        Date:"27 tháng 12,2025"
+        date:"27 tháng 12,2025"
     },
     {
         imgSrc:pic3,
         title:"Triển lãm nghệ thuật ánh sáng",
         price:"Từ 150.000đ",
-        Date:"27 tháng 12,2025"
+        date:"27 tháng 12,2025"
     },
      {
         imgSrc:pic4,
         title:"pic4",
         price:"Từ 150.000đ",
-        Date:"27 tháng 12,2025"
+        date:"27 tháng 12,2025"
     }
 ]
 export const  ThisWeekend=[
@@ -168,25 +168,25 @@ export const  ThisWeekend=[
         imgSrc:thisw1,
         title:"thisw1",
         price:"Từ 150.000đ",
-        Date:"27 tháng 12,2025"
+        date:"27 tháng 12,2025"
     },
     {
         imgSrc:thisw2,
         title:"thisw2",
         price:"Từ 150.000đ",
-        Date:"27 tháng 12,2025"
+        date:"27 tháng 12,2025"
     },
     {
         imgSrc:thisw3,
         title:"thisw4",
         price:"Từ 150.000đ",
-        Date:"27 tháng 12,2025"
+        date:"27 tháng 12,2025"
     },
     {
         imgSrc:thisw4,
         title:"Sân Khấu Thế Giới Trẻ:Căn nhà ma quá",
         price:"Từ 150.000đ",
-        Date:"27 tháng 12,2025"
+        date:"27 tháng 12,2025"
     },
 ]
 export const ThisMonth=[
@@ -194,25 +194,25 @@ export const ThisMonth=[
          imgSrc:thism1,
         title:"thism1",
         price:"Từ 150.000đ",
-        Date:"27 tháng 12,2025"
+        date:"27 tháng 12,2025"
     },
     {
          imgSrc:thism2,
         title:"thism2",
         price:"Từ 150.000đ",
-        Date:"27 tháng 12,2025"
+        date:"27 tháng 12,2025"
     },
     {
          imgSrc:thism3,
         title:"thism3",
         price:"Từ 150.000đ",
-        Date:"27 tháng 12,2025"
+        date:"27 tháng 12,2025"
     },
     {
          imgSrc:thism4,
         title:"thism4",
         price:"Từ 150.000đ",
-        Date:"27 tháng 12,2025"
+        date:"27 tháng 12,2025"
     }
 ]
 
@@ -221,25 +221,25 @@ export const Music=[
          imgSrc:music1,
         title:"music1",
         price:"Từ 150.000đ",
-        Date:"27 tháng 12,2025"
+        date:"27 tháng 12,2025"
     },
     {
          imgSrc:music2,
         title:"music2",
         price:"Từ 150.000đ",
-        Date:"27 tháng 12,2025"
+        date:"27 tháng 12,2025"
     },
     {
          imgSrc:music3,
         title:"music3",
         price:"Từ 150.000đ",
-        Date:"27 tháng 12,2025"
+        date:"27 tháng 12,2025"
     },
     {
          imgSrc:music4,
         title:"music4",
         price:"Từ 150.000đ",
-        Date:"27 tháng 12,2025"
+        date:"27 tháng 12,2025"
     },
 ]
 export const Ta=[
@@ -247,25 +247,25 @@ export const Ta=[
          imgSrc:ta1,
         title:"ta1",
         price:"Từ 150.000đ",
-        Date:"27 tháng 12,2025"
+        date:"27 tháng 12,2025"
     },
    {
          imgSrc:ta2,
         title:"ta2",
         price:"Từ 150.000đ",
-        Date:"27 tháng 12,2025"
+        date:"27 tháng 12,2025"
     },
    {
          imgSrc:ta3,
         title:"ta3",
         price:"Từ 150.000đ",
-        Date:"27 tháng 12,2025"
+        date:"27 tháng 12,2025"
     },
    {
          imgSrc:ta4,
         title:"ta4",
         price:"Từ 150.000đ",
-        Date:"27 tháng 12,2025"
+        date:"27 tháng 12,2025"
     },
     
 ]
@@ -274,25 +274,25 @@ export const Ta=[
          imgSrc:ae1,
         title:"ae1",
         price:"Từ 150.000đ",
-        Date:"27 tháng 12,2025"
+        date:"27 tháng 12,2025"
     },
      {
          imgSrc:ae2,
         title:"ae2",
         price:"Từ 150.000đ",
-        Date:"27 tháng 12,2025"
+        date:"27 tháng 12,2025"
     },
      {
          imgSrc:ae3,
         title:"ae3",
         price:"Từ 150.000đ",
-        Date:"27 tháng 12,2025"
+        date:"27 tháng 12,2025"
     },
      {
          imgSrc:ae4,
         title:"ae4",
         price:"Từ 150.000đ",
-        Date:"27 tháng 12,2025"
+        date:"27 tháng 12,2025"
     },
     
  ]
@@ -301,25 +301,25 @@ export const Ta=[
          imgSrc:ot1,
         title:"ae1",
         price:"Từ 150.000đ",
-        Date:"27 tháng 12,2025"
+        date:"27 tháng 12,2025"
     },
       {
          imgSrc:ot2,
         title:"ae2",
         price:"Từ 150.000đ",
-        Date:"27 tháng 12,2025"
+        date:"27 tháng 12,2025"
     },
       {
          imgSrc:ot3,
         title:"ae3",
         price:"Từ 150.000đ",
-        Date:"27 tháng 12,2025"
+        date:"27 tháng 12,2025"
     },
       {
          imgSrc:ot4,
         title:"ae4",
         price:"Từ 150.000đ",
-        Date:"27 tháng 12,2025"
+        date:"27 tháng 12,2025"
     },
  ]
  export const banner=[

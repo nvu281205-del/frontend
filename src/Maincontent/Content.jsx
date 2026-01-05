@@ -1,6 +1,6 @@
-import date from "../assets/date.png"
+import dateimg from "../assets/date.png"
 import "./Content.css"
-export default function Content({title,imgSrc,price,Date}){
+export default function Content({title,imgSrc,price,date}){
     return (
 <>
 <div className="content">
@@ -9,8 +9,8 @@ export default function Content({title,imgSrc,price,Date}){
 <h3>{title}</h3>
     <strong>{price}</strong>
 <div className="Date">
- <img src={date} alt="" />
-    <span>{Date}</span>
+ <img src={dateimg} alt="" />
+    <span>{date}</span>
 </div>
 </div>
 </div>
