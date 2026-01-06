@@ -1,0 +1,101 @@
+.closebutton{
+    position: absolute;
+    top: 10px;
+    right: 5px;
+    width: 25px;
+    height: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 100%;
+   background-color:transparent;
+   padding: 0px 0px 1px 0px;
+}
+.closebutton span{
+    font-size: 10px;
+}
+.top {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    padding: 52px 40px 0px 40px;
+    background-color:rgb(45, 194, 117)
+}
+.top span {
+    margin-bottom: 10px;
+    color:white;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+}
+.loginDialog{
+     border: none;
+    border-radius: 10px;
+    padding: 0;
+}
+
+.between{
+    padding: 30px;
+}
+.input {
+    align-items: center;
+     display: flex;
+    gap: 20px;
+    flex-direction: column;
+}
+ .inputtype input {
+    
+    font-size: 15px;
+    width: 320px;
+    
+}
+input:-webkit-autofill {
+     background-color: white !important;
+    color: black !important; 
+    -webkit-box-shadow: 0 0 0px 1000px white inset; 
+ }
+.inputtype{
+    position: relative;
+    padding: 5px 5px 5px 10px;
+    width: 100%;
+     border-radius: 3px;
+   border:1px solid rgb(129, 122, 122);
+   display: flex;
+   align-items: center;
+}
+.inputtype svg{
+    color: rgb(162, 157, 157);
+    position: absolute;
+    right: 8px;
+}
+.input button{
+    cursor: pointer;
+   width: 105%;
+   padding: 10px;
+   background-color: rgb(221, 221, 227);
+   border: none;
+   border-radius: 3px;
+}
+.bottom {
+    padding: 5px;
+    gap: 8px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.bottom span{
+    color: rgb(179, 178, 178);
+}
+.register {
+    color:rgb(45, 194, 117)!important;
+    cursor: pointer;
+}
+.bottom p{
+    width: 380px;
+    font-size: 13px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.bottom b{
+    color:rgb(45, 194, 117);
+    font-weight: lighter;
+}

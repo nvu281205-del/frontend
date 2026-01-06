@@ -59,7 +59,7 @@ const[date,setDate]=useState("Weekend");
         <div className="ThisWeekend">
           <div className="special-topic">
             <span onClick={()=>setDate("Weekend")}>{Language==="vi"?"Cuối tuần này":"This weekend"}</span>
-                <span onClick={()=>setDate("Month")}>{Language==="vi"?"Tháng này":"This month"}</span>
+              <span onClick={()=>setDate("Month")}>{Language==="vi"?"Tháng này":"This month"}</span>
                  <div className={date==="Month"?"greenlineM":"greenlineW"}></div> 
                  <div className="Detail">  <span>{Language==="vi"?"Xem thêm":"View more"}</span> <span style={{fontSize:"25px",marginBottom:"5px"}}>&#8250;</span>    </div>
           </div>
