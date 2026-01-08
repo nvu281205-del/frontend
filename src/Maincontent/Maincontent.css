@@ -118,6 +118,7 @@
     font-weight: lighter;
 }
 .Detail {
+    cursor: pointer;
     top: -10px;
     position: absolute;
     right: 80px;
@@ -135,6 +136,6 @@ margin-top: 50px;
     width: 1310px;
     height: 165px;
 }
-.banner{
+.city{
     margin-top: 25px;
 }

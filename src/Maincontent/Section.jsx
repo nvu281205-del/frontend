@@ -1,11 +1,20 @@
+import { useEffect, useState } from "react"
 import Content from "./Content"
-export default function Section({titleEn,titleVi,item,Language}){
+import axios from "axios";
+export default function Section({titleEn,titleVi,Language,category}){
+    let index=0;
+    const [event,setEvent]=useState([])
+     useEffect(()=>{
+     axios.get(`http://localhost:3000/events?category=${category}`)
+     .then(res=>setEvent(res.data))
+    .catch(err=>console.log(err))
+    },[category])
     return (
         <>
         <div className="ForYou">
     <span className="topic">{Language==="vi"?titleVi:titleEn}</span>
         <div style={{display:"flex", gap:"10px",justifyContent:"center",marginTop:"10px"}}>
-        {item.map((i)=>(<Content {...i} key={i.title}/>))}</div>
+        {event.slice(index,index+4).map((i)=>(<Content {...i} key={i.id}/>))}</div>
         <div className="Detail"><span>{Language==="vi"?"Xem thêm":"View more"}</span><span style={{fontSize:"25px",marginBottom:"5px"}}>&#8250;</span></div>    
         </div>
         </>

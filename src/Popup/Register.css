@@ -4,6 +4,17 @@
     border-radius: 10px;
     border: none;
 }
+/* Với Edge/IE */
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear {
+  display: none;
+}
+
+/* Với Chrome/Safari (Webkit) */
+input[type="password"]::-webkit-textfield-decoration-container {
+  display: none;
+}
+
 .regisstart{
     position: relative;
     padding: 20px 120px 20px 120px;
@@ -35,18 +46,34 @@
     margin-top: 10px;
     margin-bottom: 20px;
 }
-.validate{
+.notvalidate{
     border: red 1px solid ;
     border-radius: 5px;
     padding: 10px;
     width: 100%;
 }
-.testvalidate{
+.isvalidate{
+    border: rgb(45, 194, 117);;
+    border-radius: 5px;
+    padding: 10px;
+    width: 100%;
+}
+.testnotvalid{
     display: flex;
     justify-content: center;
     color: white;
     font-size: 10px;
     background-color: rgb(255, 66, 78);;
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+}
+.testvalid{
+     display: flex;
+    justify-content: center;
+    color: white;
+    font-size: 10px;
+    background-color: rgb(45, 194, 117);
     width: 15px;
     height: 15px;
     border-radius: 100%;
@@ -62,12 +89,22 @@ font-size: 14px;
 font-weight: bold;
 font-family:Arial, Helvetica, sans-serif;
 }
-.testvalidatemn{
+.notvalid{
      display: flex;
     justify-content: center;
     color: white;
     font-size: 8px;
     background-color: rgb(255, 66, 78);;
+    width: 11px;
+    height: 11px;
+    border-radius: 100%;
+}
+.isvalid{
+     display: flex;
+    justify-content: center;
+    color: white;
+    font-size: 8px;
+    background-color: rgb(45, 194, 117);
     width: 11px;
     height: 11px;
     border-radius: 100%;

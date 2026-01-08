@@ -7,12 +7,13 @@ import Header from './Head/Header.jsx'
 import Maincontent from './Maincontent/Maincontent.jsx';
 import Footer from './Footer/Footer.jsx';
 import MoreConTent from "./MoreContent/MoreContent.jsx"
+import { LanguageContext } from './Context.jsx';
 function App() {
   const[Language,setLanguage]=useState("vi");
   return ( 
    <>
+   <LanguageContext.Provider value={{Language,setLanguage}}>
     <Header Language={Language} Setlanguage={setLanguage}></Header>
-    
     <BrowserRouter>
    
     <Routes>
@@ -25,7 +26,7 @@ function App() {
     </BrowserRouter>
     
     <Footer Language={Language} Setlanguage={setLanguage}/>
-   
+   </LanguageContext.Provider>
    </>
   )
 }

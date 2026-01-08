@@ -137,7 +137,7 @@ export const data2 =[
         title:"img16"
     },
 ]
-export const ForYou = [
+export const FY = [
     {
         imgSrc:pic1,
         title:"Sân Khấu Hồng Vân:Ngôi Nhà Hoang(Người Vợ Ma P2)",
@@ -163,7 +163,7 @@ export const ForYou = [
         date:"27 tháng 12,2025"
     }
 ]
-export const  ThisWeekend=[
+export const  TW=[
     {
         imgSrc:thisw1,
         title:"thisw1",
@@ -189,7 +189,7 @@ export const  ThisWeekend=[
         date:"27 tháng 12,2025"
     },
 ]
-export const ThisMonth=[
+export const TM=[
     {
          imgSrc:thism1,
         title:"thism1",
