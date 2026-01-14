@@ -28,7 +28,7 @@ export default function ThisWeekend({category1,category2}){
       </Link>
                   </div>
                  <div style={{display:"flex", gap:"10px",justifyContent:"center",marginTop:"10px"}}>
-                     {event.map((i)=>(<Content {...i} key={i.title}/>))}
+                     {event.map((i)=>(<Content {...i} key={i.id}/>))}
                 </div>
                 </div>
         </>

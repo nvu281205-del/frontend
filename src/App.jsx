@@ -8,6 +8,7 @@ import Maincontent from './Maincontent/Maincontent.jsx';
 import Footer from './Footer/Footer.jsx';
 import MoreConTent from "./MoreContent/MoreContent.jsx"
 import { LanguageContext } from './Context.jsx';
+import Detail from './Detail/Detail.jsx';
 function App() {
   const[Language,setLanguage]=useState("vi");
   return ( 
@@ -22,6 +23,7 @@ function App() {
           <Maincontent/> 
           </>}/>
       <Route path="/MoreConTent/:titleSearch" element={<MoreConTent Language={Language}/>}/>
+      <Route path='/Detail/:id' element={<Detail/>}></Route>
     </Routes>
     </BrowserRouter>
     

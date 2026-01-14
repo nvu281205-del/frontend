@@ -17,7 +17,7 @@ useEffect(()=>{
          <div className="ForYou">
         <span className="topic">{Language==="vi"?titleVi:titleEn}</span>
           <div style={{display:"flex", gap:"10px",justifyContent:"center"}}>
-             {data.map((i)=>(<Content {...i} key={i.title} Language={Language}/>))}</div>
+             {data.map((i)=>(<Content {...i} key={i.id} Language={Language}/>))}</div>
         </div>
         </>
     )

@@ -17,7 +17,10 @@ export default function Section({titleEn,titleVi,category}){
         <div className="ForYou">
     <span className="topic">{Language==="vi"?titleVi:titleEn}</span>
         <div style={{display:"flex", gap:"10px",justifyContent:"center",marginTop:"10px"}}>
-        {event.slice(index,index+4).map((i)=>(<Content {...i} key={i.id}/>))}</div>
+        {event.slice(index,index+4).map((i)=>(
+            <Link className="link" to={`/Detail/${i.id}`} key={i.id}> <Content {...i}/></Link>
+           
+            ))}</div>
       <Link to={`MoreContent/${category}`} className="link">
        <div className="Detail">
         <span>{Language==="vi"?"Xem thêm":"View more"}</span>
