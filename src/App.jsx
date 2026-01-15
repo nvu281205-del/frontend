@@ -9,25 +9,40 @@ import Footer from './Footer/Footer.jsx';
 import MoreConTent from "./MoreContent/MoreContent.jsx"
 import { LanguageContext } from './Context.jsx';
 import Detail from './Detail/Detail.jsx';
+import MoreContent from './MoreContent/MoreContent.jsx';
 function App() {
   const[Language,setLanguage]=useState("vi");
   return ( 
    <>
    <LanguageContext.Provider value={{Language,setLanguage}}>
-    <Header Language={Language} Setlanguage={setLanguage}></Header>
+   
     <BrowserRouter>
    
     <Routes>
         <Route path="/" element={ <>
+          <Header Language={Language} Setlanguage={setLanguage}></Header>
            <Navmenu Language={Language} ></Navmenu>
           <Maincontent/> 
+           <Footer Language={Language} Setlanguage={setLanguage}/>
           </>}/>
-      <Route path="/MoreConTent/:titleSearch" element={<MoreConTent Language={Language}/>}/>
-      <Route path='/Detail/:id' element={<Detail/>}></Route>
+      
+       <Route path="/MoreContent" element={<>
+       <Header Language={Language} Setlanguage={setLanguage}></Header>
+       <MoreContent Language={Language}/>
+       </>
+        
+        }/> 
+      <Route path='/Detail/:id' element={<>
+        <Header Language={Language} Setlanguage={setLanguage}></Header>
+           <Navmenu Language={Language} ></Navmenu>
+      <Detail/>
+       <Footer Language={Language} Setlanguage={setLanguage}/>
+      </>
+        }></Route>
     </Routes>
     </BrowserRouter>
     
-    <Footer Language={Language} Setlanguage={setLanguage}/>
+   
    </LanguageContext.Provider>
    </>
   )

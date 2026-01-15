@@ -3,16 +3,26 @@ import ticket from "../assets/ticket.png"
 import searchIcon from "../assets/search.png"
 import vietnamIcon from "../assets/vietnamIcon.webp"
 import englishIcon from "../assets/englishIcon.png"
-import {useRef, useState} from "react"
+import {useEffect, useRef, useState} from "react"
 import Login from "../Popup/Login"
 import Register from "../Popup/Register"
+import SearchContent from "./SearchContent"
+import { Link } from "react-router-dom"
 export default function Header({Setlanguage,Language}) {//Destructering props để truyền thuộc tính  
-  const[change,setChange]=useState("")
   const loginRef=useRef();
   const regisRef=useRef();
-  function handleChange(e){
-    setChange(e.target.value);
-  }
+  const formRef=useRef()
+  const[showForm,setShowForm]=useState(false);
+  const[querysearch,setQuerySearch]=useState("");
+   useEffect(() => { 
+          function handleClickOutside(event) { 
+          if (formRef.current && !formRef.current.contains(event.target)) {
+          setShowForm(false);
+       } }
+  document.addEventListener("mousedown", handleClickOutside); 
+  return () => {
+       document.removeEventListener("mousedown", handleClickOutside);
+      } }, []);
     return (
         <>
             <header>
@@ -21,9 +31,9 @@ export default function Header({Setlanguage,Language}) {//Destructering props đ
                     <div className="search-container">
                              <img id="searchIcon" src={searchIcon} alt="search" />
                         {Language==="vi"?    
-                        (<><input type="text" value={change} placeholder="Bạn tìm gì hôm nay?" onChange={handleChange}/>
+                        (<><input onChange={(e)=>setQuerySearch(e.target.value)} value={querysearch} onClick={()=>setShowForm(!showForm)} type="text" placeholder="Bạn tìm gì hôm nay?"/>
                         <span ></span>
-                        <button >Tìm kiếm</button></>): (<><input type="text" placeholder="What are you looking for?"/>
+                    <Link to={`/MoreConTent?title=${encodeURIComponent(querysearch)}`}> <button >Tìm kiếm</button></Link> </>): (<><input type="text" placeholder="What are you looking for?"/>
                         <span ></span>
                         <button style={{marginRight:"10px"}}>Search</button></>)}
                     </div>
@@ -58,11 +68,10 @@ export default function Header({Setlanguage,Language}) {//Destructering props đ
                         </button>
                     </div>
                     </div>
-                </div>                  
+                </div>   
+           {showForm&& <SearchContent ref={formRef}/> }                           
                 </nav>
-                <nav>
-
-                </nav>
+                
             </header>
         </>
     )

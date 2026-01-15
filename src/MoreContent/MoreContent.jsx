@@ -1,12 +1,16 @@
 import { useEffect,useRef,useState } from "react"
-import { useParams } from "react-router-dom"
+import { useLocation } from "react-router-dom"
 import Content from "../Maincontent/Content";
 import './MoreConTent.css'
 import GridContent from "./GridContent";
 import empty from "/empty.webp"
 export default function MoreContent(){
-    const {titleSearch}= useParams();
+   
     const[data,setData]=useState([]);
+    const location=useLocation();
+    const param=new URLSearchParams(location.search);
+    const title=param.get('title');
+    const category =param.get('category');
     const [showForm, setShowForm] = useState(false);
     const formRef=useRef();
     useEffect(() => { 
@@ -19,10 +23,16 @@ return () => {
      document.removeEventListener("mousedown", handleClickOutside);
     } }, []);
     useEffect(()=>{
-     fetch(`http://localhost:3000/events?category=${titleSearch}`)
+     let url = "http://localhost:3000/events";
+     if (category) { 
+     url += `?category=${category}`;
+ } else if (title) {
+     url += `?title=${title}`; 
+}
+     fetch(url)
      .then(res=>res.json())
      .then(json=>setData(json));
-    },[titleSearch])
+    },[category,title])
     return (
         <>
         <div className="morecontent">
@@ -70,11 +80,12 @@ return () => {
       )}     
         </div>
         </div>
-        <div className="empty">
-             <img src={empty} alt="empty" />
-             <span>Rất tiếc! Không tìm thấy kết quả nào</span>
-        </div>
-       
+       {data.length === 0 && (
+  <div className="empty">
+    <img src={empty} alt="empty" />
+    <span>Rất tiếc! Không tìm thấy kết quả nào</span>
+  </div>
+)}
         <div className="contain">
        <GridContent data={data}/>
        </div>

@@ -1,0 +1,77 @@
+.Search{
+    z-index: 10;
+    position: absolute;
+    top: 72px;
+    left: 420px;
+    width: 51%;
+    padding: 10px;
+    border-radius: 10px;
+    background: linear-gradient(
+  to bottom,
+  rgba(28, 30, 29, 0.8),   /* Xanh rêu đậm mờ */
+  rgba(166, 166, 166, 0.6),   /* Xám tro mờ */
+  rgba(201, 197, 197, 0.4) /* Xám bạc mờ */
+);
+}
+.searchform {
+    position: relative;
+    padding: 15px 15px 15px 0px;
+}
+.titleform{
+    display: flex;
+    gap: 35px;
+}
+.spanactive{
+    cursor: pointer;
+    color: white;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.spanactive.inactive{
+color:#FFFFFF80!important;
+}
+.linecate{
+    z-index: 2;
+    position: absolute;
+    bottom: 0;
+    border-radius: 100px;
+    height: 3px;
+    width: 150px;
+    background-color: #2DC275;
+}
+.linecity{
+    position: absolute;
+    z-index: 2;
+    bottom: 0;
+    left: 200px;
+     border-radius: 100px;
+    height: 3px;
+    width: 160px;
+    background-color: #2DC275;
+}
+.imgSearchForm{
+    padding: 10px 0px 10px 0px;
+    width: 99%;
+    border-top: 1px solid white ;
+    display: flex;
+    gap: 10px;
+    z-index: 1;
+}
+.imgSearch{
+    border-radius: 10px;  
+    position: relative;
+}
+.imgSearch img{
+    border-radius: 10px;
+   width: 180px;
+   height: 100px;
+}
+.imgSearch span{
+   position: absolute;
+   top: 8px;
+   left: 8px;
+   font-size: 14px;
+   font-weight: bold;
+   font-family: Arial, Helvetica, sans-serif;
+   color: white;
+}

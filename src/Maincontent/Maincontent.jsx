@@ -11,6 +11,7 @@ import VP from "./VP";
 import Cities from "./Cities";
 import Detail from "../Detail/Detail";
 import BuyTicket from "../BuyTicket/BuyTicket";
+import SearchContent from "../Head/SearchContent";
 export default function Maincontent() { 
     return (
           <main>
@@ -25,6 +26,7 @@ export default function Maincontent() {
        <Section category='Others' titleEn="Others" titleVi="Thể loại khác"/>
         <Cities  category='City' titleEn="Exciting Destination" titleVi="Điểm đến thú vị"/>  
         <BuyTicket/>
+       
         </main>
         
     )

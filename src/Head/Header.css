@@ -14,6 +14,7 @@ header{
     width: 100%;
 }
 nav{
+    position: relative;
     display: flex;
     justify-content: space-around;
     align-items: center;
