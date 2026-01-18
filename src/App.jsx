@@ -12,6 +12,7 @@ import Detail from './Detail/Detail.jsx';
 import MoreContent from './MoreContent/MoreContent.jsx';
 import BuyTicket from './BuyTicket/BuyTicket.jsx';
 import BookTicket from './BuyTicket/BookTicket.jsx';
+import ScrolltoTop from './ScrolltoTop.jsx';
 function App() {
   const[Language,setLanguage]=useState("vi");
   return ( 
@@ -19,7 +20,7 @@ function App() {
    <LanguageContext.Provider value={{Language,setLanguage}}>
    
     <BrowserRouter>
-   
+   <ScrolltoTop/>
     <Routes>
         <Route path="/" element={ <>
           <Header Language={Language} Setlanguage={setLanguage}></Header>

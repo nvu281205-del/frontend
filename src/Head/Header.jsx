@@ -27,11 +27,11 @@ export default function Header({Setlanguage,Language}) {
         <>
             <header>
                 <nav>
-                    <h1>ticketbox</h1>
+               <Link to="/" className="link"> <h1>ticketbox</h1></Link>
                     <div className="search-container">
-                             <img id="searchIcon" src={searchIcon} alt="search" />
+                           <img id="searchIcon" src={searchIcon} alt="search" /> 
                         {Language==="vi"?    
-                        (<><input onChange={(e)=>setQuerySearch(e.target.value)} value={querysearch} onClick={()=>setShowForm(showForm=>!showForm)} type="text" placeholder="Bạn tìm gì hôm nay?"/>
+                        (<><input onChange={(e)=>setQuerySearch(e.target.value)} value={querysearch} onClick={()=>setShowForm(true)} type="text" placeholder="Bạn tìm gì hôm nay?"/>
                         <span ></span>
                     <Link to={`/MoreConTent?title=${encodeURIComponent(querysearch)}`}> <button >Tìm kiếm</button></Link> </>): (<><input type="text" placeholder="What are you looking for?"/>
                         <span ></span>

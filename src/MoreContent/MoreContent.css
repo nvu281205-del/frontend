@@ -1,5 +1,6 @@
 .morecontent{
     background-color: black;
+    min-height: 100vh;
 }
 .contain{
    display: flex;
@@ -37,8 +38,10 @@
     font-size: 13px;
     font-family: Arial, Helvetica, sans-serif;
 }
+.filters{
+ position: relative;
+}
 .filter{
-    position: relative;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -51,7 +54,7 @@
     color: white;
 }
 .filterform{
-    z-index: 10;
+    z-index: 9;
     width: 750px;
     position: absolute;
     right: 0;
@@ -67,9 +70,36 @@
 }
 .radiobt{
     display: flex;
+    align-items: center;
     gap: 3px;
 }
-
+.radiobutton{
+    -webkit-appearance: none;
+      appearance: none;
+    width: 15px;
+    height: 15px;
+    border: 1px solid gray;
+    cursor: pointer;
+    position: relative;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.radiobutton:hover{
+    border: 1px solid rgb(9, 135, 224);
+}
+.radiobutton:checked{
+     border: 1px solid #2DC275;
+}
+.radiobutton:checked::before{
+    content: "";
+    width: 10px;
+    height: 10px;
+    background: #2DC275;
+    border-radius: 50px;
+    position: absolute;
+}
 .radiobt span{
     margin-top: 5px;
     color: rgb(56, 51, 51);
@@ -108,6 +138,7 @@
     border: none;
 }
 .confirmfilter{
+    cursor: pointer;
     width: 100%;
     margin:15px 15px 15px 0px;
     padding: 10px;
