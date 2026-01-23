@@ -1,8 +1,9 @@
 
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Register.css'
+import axios from 'axios';
 export default function Register({loginRef,ref}){
-      
+      const[error,setError]=useState("");
       const [password,setPassword]=useState("");
       const[confirm,setConfirm]=useState("");
       const[samepass,setSamepass]=useState(false)
@@ -12,12 +13,14 @@ export default function Register({loginRef,ref}){
       const[ctouched,setCtouched]=useState(false);
       const[showpw,setShowpw]=useState(false);
       const[showcf,setShowcf]=useState(false);
+
     
       function handleEmail(e){
         const v=e.target.value;
         setEmail(v);
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         setValidemail(emailRegex.test(v));
+        setError("");
       }
       function showModal(){
         ref.current.close()
@@ -38,8 +41,21 @@ export default function Register({loginRef,ref}){
     const isUpper=/[A-Z]/.test(password);
     const isPasswordValid = islength && isNumberAndLower && isSpecialChar && isUpper;
     const[validemail,setValidemail]=useState(true);
-      const isFormValid=validemail&&isPasswordValid&samepass;
-    
+    const isFormValid=validemail&&isPasswordValid&&samepass;
+
+    const handleSubmit=async (e)=>{
+        e.preventDefault();
+        try{
+        const _res= await axios.post('http://localhost:3000/auth/register',
+             {username:email,password},
+           { headers:{'Content-Type':'application/json'}}
+        );
+         ref.current.close();
+            loginRef.current.showModal();
+        }catch(err){
+            setError(err.response?.data?.message);
+        }       
+    }
     return (
         <> 
         <dialog ref={ref} className='Register-dialog'>
@@ -51,9 +67,9 @@ export default function Register({loginRef,ref}){
             <div className='Register-body'>
             <div className='input'>
                <div className='form-field'>  
-                <div className={`form-input ${ email===""?etouched?"input-error":"":validemail?"input-valid":"input-error"}`}>
+                <div className={`form-input ${ email===""?etouched?"input-error":"":validemail?error?"input-error":"input-valid":"input-error"}`}>
             <input type="text" onBlur={()=>setEtouched(true)}  value={email} onChange={handleEmail}  placeholder='Nhập email của bạn'              /></div>
-               <span className='form-error'>{etouched&&email===""?"Nhập email của bạn":validemail?"":"Email sai định dạng"}</span>
+               <span className='form-error'>{etouched&&email===""?"Nhập email của bạn":!validemail?"Email sai định dạng":error||""}</span>
                </div> 
                  <div className='form-field'>  
               <div className={`form-input ${password===""?ptouched?"input-error":"":isPasswordValid?"input-valid":"input-error"}`}>
@@ -101,7 +117,7 @@ export default function Register({loginRef,ref}){
                 <span>Đã có tài khoản?</span>
                 <span className='register' onClick={showModal}>Đăng nhập ngay</span>
             </div>
-             <button className={`loginbtn ${isFormValid?"enable":"disable"}`} disabled={!isFormValid}>Tiếp tục</button>  
+             <button type='submit' onClick={handleSubmit} className={`loginbtn ${isFormValid?"enable":"disable"}`} disabled={!isFormValid}>Tiếp tục</button>  
             </div>
         </form>
         </dialog>

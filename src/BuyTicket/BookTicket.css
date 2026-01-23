@@ -1,7 +1,9 @@
 .BookTicket{
     position: relative;
+    min-height: 88vh;
 }
 .backgroundimg{
+    
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -28,7 +30,7 @@
 .BookInfo{
     border-top: 1px solid rgba(255, 255, 255, 0.5);
     width: 100%;
-    padding-top: 15px;
+    padding-top: 20px;
     padding-bottom: 25px;
 }
 .BookDate{
@@ -153,41 +155,35 @@
     margin-top: 54px;
     border-radius: 12px;
 }
-.PaymentInfo span{
+.Paymentinfo{
    color: #000000;
    font-family: Arial, Helvetica, sans-serif;
-   font-weight: bold;
+   font-weight: bolder;
    font-size: 15px;
 }
 .PaymentInfoform{
     margin-top: 15px;
-    gap: 100px;
+    display: flex;
+    flex-direction: column;
+}
+.titleInfoPrice{
     display: flex;
     justify-content: space-between;
 }
-.infoandprice span{
-    color: #000000;
-    font-weight: lighter;
+.titleInfoPrice span{
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 14px;
 }
 .infoandprice{
-    margin-top: 15px;
-    display: flex;
-    flex-direction: column;
+    margin-top: 10px;
     gap: 5px;
-}
-.quantity{
     display: flex;
     flex-direction: column;
 }
-.quantityandprice{
-    margin-top: 15px;
+.infoprice{
     display: flex;
-    flex-direction: column;
-    gap: 5px;
-}
-.quantityandprice span{
-    font-weight: 100;
+    justify-content: space-between;
 }
 .Orderinfo{
     margin-top: 15px;

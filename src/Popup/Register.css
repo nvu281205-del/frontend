@@ -53,6 +53,9 @@ input[type="password"]::-webkit-textfield-decoration-container {
    display: flex;
    align-items: center;
 }
+.form-input svg{
+    cursor: pointer;
+}
 .form-input.input-valid{
    border:1px solid rgb(21, 110, 189);
 }

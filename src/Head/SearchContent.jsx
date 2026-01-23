@@ -64,7 +64,7 @@ export default function SearchContent({ref,setShowForm}){
          <div className="recommendForm">
          <div className="recommendGrid">
           {recommend.slice(index,index+9).map((i)=>
-          <Link onClick={()=>setShowForm(false)} to={`/Detail/${i.id}`} key={i.id}><GridSearch {...i}/>)</Link>)} 
+          <Link className="link" onClick={()=>setShowForm(false)} to={`/Detail/${i.id}`} key={i.id}><GridSearch {...i}/></Link>)} 
          </div>
          </div>
        </div>

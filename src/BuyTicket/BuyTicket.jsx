@@ -24,6 +24,8 @@ export  default function BuyTicket(){
     return { ...prev, [ticketId]: newCount };
   });
 };
+        localStorage.setItem("counts", JSON.stringify(counts));
+        localStorage.setItem("totalPrice", totalPrice);
 
   
     return (

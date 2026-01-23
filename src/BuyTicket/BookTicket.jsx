@@ -16,6 +16,9 @@ export default function BookTicket(){
         .then(res=>setEventid(res.data))
         .catch(err=>console.log(err))
     },[id])
+    const counts = JSON.parse(localStorage.getItem("counts")) || {};
+    const totalPrice = Number(localStorage.getItem("totalPrice")) || 0;
+
     return(
         <>
         <div className="BookTicket">
@@ -44,14 +47,14 @@ export default function BookTicket(){
           <div className="ticketreceive">
             <span>Thông tin nhận vé</span>
             <p>Vé điện tử sẽ được hiển thị trong
-            mục "Vé của tôi" của tài khoản nvu281205@gmail.com 
+            mục "Vé của tôi" trong tài khoản của bạn sau khi thanh toán thành công.
             </p>
           </div>
           <div className="PaymentMethod">
             <span>Phương thức thanh toán</span>
             <div className="Method">
             <div className="apppayment">
-                <input type="radio" className="radiopayment" name="payment" />
+                <input defaultChecked type="radio" className="radiopayment" name="payment" />
                 <img src={VNPAY} alt="" />
                 <span>VNPAY/Ứng dụng ngân hàng</span>
             </div>    
@@ -80,34 +83,40 @@ export default function BookTicket(){
             </div>
             <div className="payinfo">
             <div className="PaymentInfo">
-               <span>Thông tin đặt vé</span>
+               <span className="Paymentinfo">Thông tin đặt vé</span>
                <div className="PaymentInfoform">
-               <div className="type">
+               <div className="titleInfoPrice">
                 <span>Loại vé</span>
-               <div className="infoandprice">
-                <span>General Access</span>
-                <span>575.000</span>
-               </div>
-               </div>
-               <div className="quantity">
                 <span>Số Lượng</span>
-                <div className="quantityandprice">
-                    <span>04</span>
-                    <span>1200000đ</span>
+               </div> 
+               {eventid.ticket?.map((ticket)=>{
+                    const count=counts[ticket.id] || 0;
+                    if(count==0) return null;
+                    return (
+                           <div className="infoandprice" key={ticket.id}>
+                <div className="infoprice">
+                <span>{ticket.type}</span>
+                <span>{count}</span>
+                </div>        
+                 <div className="infoprice">
+                 <span>{ticket.price}</span>
+                 <span>{ticket.price*count}</span>
                 </div>
                </div>
+                    )
+               })}
                </div>
             </div>
             <div className="Orderinfo">
                   <span>Thông tin đơn hàng</span>
                   <div className="Subtotal">
                   <span>Tạm tính</span>
-                  <span>1.150.000đ</span>
+                  <span>{totalPrice}</span>
                   </div>
                   <div className="Total">
                     <div className="totalform">
                         <span>Total</span>
-                        <span className="pricetotal">1.500.000đ</span>
+                        <span className="pricetotal">{totalPrice}</span>
                     </div>
                     <p>By proceeding the order , you agree to the 
                         General Trading Conditions

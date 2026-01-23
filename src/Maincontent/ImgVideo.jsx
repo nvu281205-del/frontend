@@ -1,10 +1,11 @@
-import { data } from "./data";
+
 import "./ImgVideo.css"
 import {useContext, useEffect, useRef,useState} from "react"
 import muted from "../video/muted.png"
 import unmuted from "../video/unmuted.png"
 import { LanguageContext } from "../Context";
-export default function ImgVideo({imgSrc, title, position,video,setCurrentIndex,index}) {
+import { Link } from "react-router-dom";
+export default function ImgVideo({imgSrc, title, position,video,setCurrentIndex,index,id,datalength}){ 
     const[mute,setMute]=useState(true);
      const videoRef = useRef(null);
       useEffect(() => {
@@ -31,16 +32,16 @@ export default function ImgVideo({imgSrc, title, position,video,setCurrentIndex,
                     setMute(videoRef.current.muted)
                 }}> <img src={mute?muted:unmuted} /></button>
                
-           <button className="detail-button">{Language==='vi'?'Xem chi tiết':'View Detail'}</button>
+        <Link to={`/Detail/${id}`}><button className="detail-button">{Language==='vi'?'Xem chi tiết':'View Detail'}</button></Link> 
                 {position==="left" &&( 
-                <button className="back-button" onClick={()=>setCurrentIndex((prevIndex)=>(prevIndex - 1 + data.length)%data.length)} >
+                <button className="back-button" onClick={()=>setCurrentIndex((prevIndex)=>(prevIndex - 1 + datalength)%datalength)} >
                 <span className="arrow-left">&#8249;</span>
                  </button>)}
                  {position==="right" &&(
-                 <button className="next-button" onClick={()=>setCurrentIndex((prevIndex)=>(prevIndex+1)%data.length)}>
+                 <button className="next-button" onClick={()=>setCurrentIndex((prevIndex)=>(prevIndex+1)%datalength)}>
                  <span className="arrow-right">&#8250;</span>
                 </button>)}
             </div>
         </>
     )
-}
+}   
