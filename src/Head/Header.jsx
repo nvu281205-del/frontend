@@ -8,6 +8,7 @@ import Login from "../Popup/Login"
 import Register from "../Popup/Register"
 import SearchContent from "./SearchContent"
 import { Link } from "react-router-dom"
+import { jwtDecode } from "jwt-decode";
 export default function Header({Setlanguage,Language}) {
   const [token, setToken] = useState(()=>localStorage.getItem("token") || null);
   const loginRef=useRef();
@@ -37,8 +38,19 @@ export default function Header({Setlanguage,Language}) {
    function Logout(){
     localStorage.removeItem("token");
     setToken(null);
+    window.location.reload()
    }
-
+   useEffect(()=>{
+    if(!token) return;
+    if(token){
+        const decode = jwtDecode(token);
+        if(decode.exp*1000<Date.now()){
+          setTimeout(()=>{
+              Logout();
+          },0)  
+        }
+    }
+   },[token])
     return (
         <>
             <header>

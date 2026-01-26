@@ -9,6 +9,7 @@ import { useParams } from "react-router-dom"
 import { useEffect, useState } from "react"
 import axios from "axios"
 export default function BookTicket(){
+    const [selectmethod,setSelectMethod]=useState("VNPAY")
     const {id}=useParams()
      const[eventid,setEventid]=useState({});
     useEffect(()=>{
@@ -18,7 +19,34 @@ export default function BookTicket(){
     },[id])
     const counts = JSON.parse(localStorage.getItem("counts")) || {};
     const totalPrice = Number(localStorage.getItem("totalPrice")) || 0;
-
+  const handlePayment = async ()=>{
+    const token=localStorage.getItem("token");
+    if(token==null){
+        console.log("bạn chưa đăng nhập")
+    }
+    const tickets= Object.entries(counts).map(([ticketId,count])=>({
+        ticketId:Number(ticketId),
+        count,
+    }))
+    console.log(token)
+        const orderData={
+         eventId:Number(id),
+          tickets:tickets,totalPrice,
+          payment_method:selectmethod,
+        };
+        console.log(orderData)
+        try{
+            await axios.post("http://localhost:3000/orders",orderData,{
+                headers:{
+                    Authorization:`Bearer ${token}`
+                },
+            });
+            
+            alert("Đặt vé thành công!")
+        }catch(err){
+         console.log(err.response?.data || err);
+        }
+      }  
     return(
         <>
         <div className="BookTicket">
@@ -54,27 +82,27 @@ export default function BookTicket(){
             <span>Phương thức thanh toán</span>
             <div className="Method">
             <div className="apppayment">
-                <input defaultChecked type="radio" className="radiopayment" name="payment" />
+                <input defaultChecked type="radio" className="radiopayment" name="payment" value='VNPAY' onChange={(e)=>setSelectMethod(e.target.value)}/>
                 <img src={VNPAY} alt="" />
                 <span>VNPAY/Ứng dụng ngân hàng</span>
             </div>    
             <div className="apppayment">
-                <input type="radio" className="radiopayment" name="payment" />
+                <input type="radio" className="radiopayment" name="payment" value='VietQR' onChange={(e)=>setSelectMethod(e.target.value)} />
                 <img src={VietQR} alt="" />
                 <span>VietQR</span>
             </div>    
             <div className="apppayment">
-                <input type="radio" className="radiopayment" name="payment"/>
+                <input type="radio" className="radiopayment" name="payment" value="ShopeePay" onChange={(e)=>setSelectMethod(e.target.value)}/>
                 <img src={ShopeePay} alt="" />
                 <span>ShopeePay</span>
             </div>    
             <div className="apppayment" >
-                <input type="radio" className="radiopayment" name="payment" />
+                <input type="radio" className="radiopayment" name="payment" value="ZaloPay" onChange={(e)=>setSelectMethod(e.target.value)} />
                 <img src={ZaloPay} alt="" />
                 <span>ZaloPay</span>
             </div>    
             <div className="apppayment">
-                <input type="radio" className="radiopayment" name="payment" />
+                <input type="radio" className="radiopayment" name="payment" value="Visa" onChange={(e)=>setSelectMethod(e.target.value)}/>
                 <img src={Visa} alt="" />
                 <span>Thẻ ghi nợ/Thẻ tín dụng</span>
             </div>    
@@ -89,7 +117,7 @@ export default function BookTicket(){
                 <span>Loại vé</span>
                 <span>Số Lượng</span>
                </div> 
-               {eventid.ticket?.map((ticket)=>{
+               {eventid.tickets?.map((ticket)=>{
                     const count=counts[ticket.id] || 0;
                     if(count==0) return null;
                     return (
@@ -121,7 +149,7 @@ export default function BookTicket(){
                     <p>By proceeding the order , you agree to the 
                         General Trading Conditions
                     </p>
-                    <button className="PaymentButton">Payment</button>
+                    <button onClick={handlePayment} className="PaymentButton">Payment</button>
                   </div>
             </div>
             </div>

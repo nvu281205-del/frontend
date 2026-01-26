@@ -13,7 +13,7 @@ export  default function BuyTicket(){
     const navigate=useNavigate();
   const[counts,setCounts]=useState({});
   const totalCount = Object.values(counts).reduce((sum, val) => sum + val, 0);
-  const totalPrice = eventid.ticket?eventid.ticket.reduce((sum,ticket)=>{
+  const totalPrice = eventid.tickets?eventid.tickets?.reduce((sum,ticket)=>{
     const count =counts[ticket.id]||0;
     return sum + count * Number(ticket.price);
   },0):0;
@@ -26,8 +26,7 @@ export  default function BuyTicket(){
 };
         localStorage.setItem("counts", JSON.stringify(counts));
         localStorage.setItem("totalPrice", totalPrice);
-
-  
+     
     return (
         <>     <div className="contentbuy">
                <div className="ReturnBt" onClick={()=>navigate(-1)}>
@@ -37,7 +36,7 @@ export  default function BuyTicket(){
                <div className="ticketform">
          <span className="Choseticket">Chọn vé</span>
            <div className="typetickform">
-           {eventid.ticket?.map((ticket)=>{
+           {eventid.tickets?.map((ticket)=>{
             const count=counts[ticket.id]||0;
             const disabledminus=count<=0;
             const disabledplus=count>=10;
@@ -77,7 +76,7 @@ export  default function BuyTicket(){
             </div>
             <div className="asideprice">
              <span>Giá vé</span>
-             {eventid.ticket?.map((ticket)=>(
+             {eventid.tickets?.map((ticket)=>(
               <div key={ticket.id} className="tickettype">
              <span>{ticket.type}</span>
              <span className="price">{Number(ticket.price).toLocaleString("vi-VN")} <sup>đ</sup></span>
