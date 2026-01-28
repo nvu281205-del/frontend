@@ -28,13 +28,11 @@ export default function BookTicket(){
         ticketId:Number(ticketId),
         count,
     }))
-    console.log(token)
         const orderData={
          eventId:Number(id),
           tickets:tickets,totalPrice,
           payment_method:selectmethod,
         };
-        console.log(orderData)
         try{
             await axios.post("http://localhost:3000/orders",orderData,{
                 headers:{

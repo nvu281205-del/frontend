@@ -13,6 +13,7 @@ import MoreContent from './MoreContent/MoreContent.jsx';
 import BuyTicket from './BuyTicket/BuyTicket.jsx';
 import BookTicket from './BuyTicket/BookTicket.jsx';
 import ScrolltoTop from './ScrolltoTop.jsx';
+import MyTicket from './Head/MyTicket.jsx';
 function App() {
   const[Language,setLanguage]=useState("vi");
   return ( 
@@ -56,6 +57,15 @@ function App() {
           <>
           <Header></Header>
           <BookTicket/>
+          </>
+        }> 
+
+        </Route>
+         <Route path='/MyTicket' element={
+          <>
+          <Header></Header>
+          <MyTicket/>
+          <Footer/>
           </>
         }> 
 

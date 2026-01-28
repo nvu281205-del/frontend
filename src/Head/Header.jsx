@@ -9,8 +9,10 @@ import Register from "../Popup/Register"
 import SearchContent from "./SearchContent"
 import { Link } from "react-router-dom"
 import { jwtDecode } from "jwt-decode";
+import axios from "axios"
 export default function Header({Setlanguage,Language}) {
   const [token, setToken] = useState(()=>localStorage.getItem("token") || null);
+  const [refresh,_setRefresh]=useState(()=>localStorage.getItem("refreshtoken")||null);
   const loginRef=useRef();
   const regisRef=useRef();
   const formRef=useRef()
@@ -42,15 +44,16 @@ export default function Header({Setlanguage,Language}) {
    }
    useEffect(()=>{
     if(!token) return;
-    if(token){
         const decode = jwtDecode(token);
         if(decode.exp*1000<Date.now()){
-          setTimeout(()=>{
-              Logout();
-          },0)  
+          axios.post("http://localhost:3000/auth/login",{},
+           {headers:{
+               Authorization:`Bearer ${refresh}`
+           },
+          }
+        )
         }
-    }
-   },[token])
+   },[token,refresh])
     return (
         <>
             <header>
@@ -70,7 +73,7 @@ export default function Header({Setlanguage,Language}) {
                      
                     <div className="MyTicket">
                    <img src={ticket} alt="Myticket" />
-                   <button>{Language==="vi"?"Vé của tôi":"My ticket"}</button>
+                <Link to='/MyTicket'><button>{Language==="vi"?"Vé của tôi":"My ticket"}</button></Link>  
                     </div>
                    
                {token?
@@ -80,7 +83,7 @@ export default function Header({Setlanguage,Language}) {
                    <div className="accountform" hidden>
                     <button >
                 <svg width="20" height="20" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" clipRule="evenodd" d="M0 2a2 2 0 012-2h16a2 2 0 012 2v3.172a1 1 0 01-.293.707L19 6.586a2 2 0 000 2.828l.707.707a1 1 0 01.293.707V14a2 2 0 01-2 2H2a2 2 0 01-2-2v-3.172a1 1 0 01.293-.707L1 9.414a2 2 0 000-2.828l-.707-.707A1 1 0 010 5.172V2zm18 0H2v2.757l.414.415a4 4 0 010 5.656L2 11.243V14h16v-2.757l-.414-.415a4 4 0 010-5.656L18 4.757V2zM6 6.25a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm0 3.5a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1z" fill="#38383D"></path></svg>
-                  <span>Vé của tôi</span>  
+              <Link className="link" to="/MyTicket"><span>Vé của tôi</span>  </Link>    
                     </button>
                     <button>
                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" clipRule="evenodd" d="M10 0C4.477 0 0 4.477 0 10s4.477 10 10 10 10-4.477 10-10S15.523 0 10 0zM2 10a8 8 0 1113.81 5.499 6.013 6.013 0 00-2.905-3.75 4 4 0 10-5.811 0A6.013 6.013 0 004.19 15.5 7.973 7.973 0 012 10zm4 6.93A7.963 7.963 0 0010 18c1.457 0 2.823-.39 4-1.07a4 4 0 00-8 0zM10 7a2 2 0 100 4 2 2 0 000-4z" fill="#38383D"></path></svg>   

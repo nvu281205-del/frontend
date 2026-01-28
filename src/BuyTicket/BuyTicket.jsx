@@ -17,10 +17,10 @@ export  default function BuyTicket(){
     const count =counts[ticket.id]||0;
     return sum + count * Number(ticket.price);
   },0):0;
- const handleChange = (ticketId, delta) => {
+ const handleChange = (ticketId,ticketstock, delta) => {
   setCounts(prev => {
     const current = prev[ticketId] || 0;
-    const newCount = Math.max(0, Math.min(10, current + delta)); // giới hạn 0–10
+    const newCount = Math.max(0, Math.min(ticketstock, current + delta));
     return { ...prev, [ticketId]: newCount };
   });
 };
@@ -28,7 +28,8 @@ export  default function BuyTicket(){
         localStorage.setItem("totalPrice", totalPrice);
      
     return (
-        <>     <div className="contentbuy">
+            <>  
+           <div className="contentbuy">
                <div className="ReturnBt" onClick={()=>navigate(-1)}>
         <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg" className="back"><path fillRule="evenodd" clipRule="evenodd" d="M8.707 3.793a1 1 0 010 1.414L4.414 9.5H18a1 1 0 110 2H4.414l4.293 4.293a1 1 0 11-1.414 1.414l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 0z" fill="#fff"></path></svg>
                <span>Trở về</span>
@@ -39,18 +40,20 @@ export  default function BuyTicket(){
            {eventid.tickets?.map((ticket)=>{
             const count=counts[ticket.id]||0;
             const disabledminus=count<=0;
-            const disabledplus=count>=10;
+            const disabledplus=count>=ticket.stock;
             return(
             <div className="infoticket" key={ticket.id}>
            <div className="pricetype" >
             <span>{ticket.type}</span>
             <span className="price">{Number(ticket.price).toLocaleString("vi-VN")}<sup>đ</sup></span>
             </div>
-           <div className="quantityform">
-             <button disabled={disabledminus} className={disabledminus?"countdisable":"countable"} onClick={()=>handleChange(ticket.id,-1)}>-</button>
+        {ticket.stock>0?<div className="quantityform">
+             <button disabled={disabledminus} className={disabledminus?"countdisable":"countable"} onClick={()=>handleChange(ticket.id,ticket.stock,-1)}>-</button>
              <button className="quantitybt">{count}</button>
-             <button disabled={disabledplus} className={disabledplus?"countdisable":"countable"}onClick={()=>handleChange(ticket.id,+1)}>+</button>
-           </div>
+             <button disabled={disabledplus} className={disabledplus?"countdisable":"countable"}onClick={()=>handleChange(ticket.id,ticket.stock,+1)}>+</button>
+           </div>: <div className="outticket">
+            Hết Vé
+           </div>}   
            </div>
            )})}
            </div>

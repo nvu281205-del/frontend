@@ -29,12 +29,13 @@ export default function Login({registerRef,ref}){
 const handleSubmit= async (e)=>{
     e.preventDefault();
     try{
-  const _res= await axios.post('http://localhost:3000/auth/login',
+  const res= await axios.post('http://localhost:3000/auth/login',
          {username:email,password},
        { headers:{'Content-Type':'application/json'}} ); 
        
     ref.current.close();
-    localStorage.setItem("token",_res.data.access_token);
+    localStorage.setItem("token",res.data.access_token);
+    localStorage.setItem("refreshtoken",res.data.refresh_token)
     window.location.reload();   
     }catch(err){
         const msg=err.response?.data?.message;
@@ -43,8 +44,7 @@ const handleSubmit= async (e)=>{
         }
        else if(msg==="Thông tin đăng nhập không chính xác"){
             setPasswordError(msg);
-       }
-        
+       }      
     } 
 }
     const [show, setShow] = useState(false);
