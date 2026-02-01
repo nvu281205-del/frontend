@@ -4,14 +4,10 @@
     border-radius: 10px;
     border: none;
 }
-
-/* Với Edge/IE */
 input[type="password"]::-ms-reveal,
 input[type="password"]::-ms-clear {
   display: none;
 }
-
-/* Với Chrome/Safari (Webkit) */
 input[type="password"]::-webkit-textfield-decoration-container {
   display: none;
 }
@@ -29,6 +25,7 @@ input[type="password"]::-webkit-textfield-decoration-container {
 }
 .Register-closebtn{
   position: absolute;
+  cursor: pointer;
     top: 10px;
     right: 5px;
     width: 25px;

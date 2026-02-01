@@ -5,6 +5,7 @@
     padding: 0;
 }
 .closebutton{
+    cursor: pointer;
     position: absolute;
     top: 10px;
     right: 5px;
@@ -46,7 +47,6 @@
  .form-input input {
     font-size: 15px;
     width: 320px;
-    
 }
 input:-webkit-autofill {
      background-color: white !important;    
@@ -57,10 +57,11 @@ input:-webkit-autofill {
     position: relative;
     padding: 3px 5px 3px 10px;
     width: 95%;
-     border-radius: 3px;
-   border:1px solid rgb(129, 122, 122);
-   display: flex;
-   align-items: center;
+    border-radius: 3px;
+    border:1px solid rgb(129, 122, 122);
+    display: flex;
+    align-items: center;
+    
 }
 .form-input svg{
     color: rgb(162, 157, 157);

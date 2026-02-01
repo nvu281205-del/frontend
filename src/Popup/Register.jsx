@@ -47,7 +47,7 @@ export default function Register({loginRef,ref}){
         e.preventDefault();
         try{
         const _res= await axios.post('http://localhost:3000/auth/register',
-             {username:email,password},
+             {email,password},
            { headers:{'Content-Type':'application/json'}}
         );
          ref.current.close();

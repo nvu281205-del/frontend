@@ -11,7 +11,8 @@ export default function Login({registerRef,ref}){
      const [passwordError,setPasswordError]=useState("");
      const [ptouched,setPtouched]=useState(false);
      const isFormValid=validemail&&email!==""&&password!==""&&!passwordError&& !emailError;
-    function showModal(){
+    
+     function showModal(){
          ref.current.close();
         registerRef.current.showModal()
     }
@@ -30,13 +31,14 @@ const handleSubmit= async (e)=>{
     e.preventDefault();
     try{
   const res= await axios.post('http://localhost:3000/auth/login',
-         {username:email,password},
+         {email,password},
        { headers:{'Content-Type':'application/json'}} ); 
        
     ref.current.close();
     localStorage.setItem("token",res.data.access_token);
     localStorage.setItem("refreshtoken",res.data.refresh_token)
-    window.location.reload();   
+    window.location.reload()
+    
     }catch(err){
         const msg=err.response?.data?.message;
         if(msg==="Email chưa đăng ký"){
