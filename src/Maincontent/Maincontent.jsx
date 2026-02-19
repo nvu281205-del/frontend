@@ -7,6 +7,7 @@ import ForYou from "./ForYou"
 import ThisWeekend from "./ThisWeekend"
 import VP from "./VP";
 import Cities from "./Cities";
+import Admin from '../Admin/Admin';
 export default function Maincontent() { 
     return (
           <main>

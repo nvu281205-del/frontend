@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import './Login.css'
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 export default function Login({registerRef,ref}){
     const [email,setEmail]=useState("");
     const [password,setPassword]=useState("");
@@ -11,6 +12,7 @@ export default function Login({registerRef,ref}){
      const [passwordError,setPasswordError]=useState("");
      const [ptouched,setPtouched]=useState(false);
      const isFormValid=validemail&&email!==""&&password!==""&&!passwordError&& !emailError;
+     const navigate = useNavigate();
      function handleClose(){
         ref.current.close();
      }
@@ -35,6 +37,11 @@ const handleSubmit= async (e)=>{
   const res= await axios.post('http://localhost:3000/auth/login',
          {email,password},
        { headers:{'Content-Type':'application/json'}} );
+     if (res.data.role === "admin") {
+  navigate("/admin");
+} else {
+  navigate("/");
+}
     ref.current.close();
     localStorage.setItem("token",res.data.access_token);
     localStorage.setItem("refreshtoken",res.data.refresh_token)

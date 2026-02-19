@@ -30,12 +30,12 @@
     color: white;
 }
 .asidehead{
-    width: 350px;
-    padding: 10px 50px 10px 10px;
+    width: 400px;
+    padding: 10px 30px 10px 10px;
     background-color: #27272A;
 }
 .asidehead span{
-    width: 100px;
+    width: 350px;
 }
 
 .asidebody{

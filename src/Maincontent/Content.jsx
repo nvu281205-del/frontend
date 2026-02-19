@@ -1,4 +1,4 @@
-import dateimg from "../assets/date.png"
+import dateimg from "/date.png"
 import { useContext } from "react";
 import { LanguageContext } from "../Context";
 import "./Content.css"

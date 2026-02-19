@@ -1,8 +1,8 @@
 
 import "./ImgVideo.css"
 import {useContext, useEffect, useRef,useState} from "react"
-import muted from "../video/muted.png"
-import unmuted from "../video/unmuted.png"
+import muted from "/video/muted.png"
+import unmuted from "/video/unmuted.png"
 import { LanguageContext } from "../Context";
 import { Link } from "react-router-dom";
 export default function ImgVideo({imgSrc, title, position,video,setCurrentIndex,index,id,datalength}){ 

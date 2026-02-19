@@ -14,6 +14,7 @@ import ScrolltoTop from './ScrolltoTop.jsx';
 import MyTicket from './Head/MyTicket.jsx';
 import Account from './Head/Account.jsx';
 import BuyTicket from './BuyTicket/BuyTicket.jsx';
+import Admin from './Admin/Admin.jsx';
 function App() {
   const[Language,setLanguage]=useState("vi");
   return ( 
@@ -23,7 +24,11 @@ function App() {
 
     <BrowserRouter>
    <ScrolltoTop/>
-    <Header Language={Language} Setlanguage={setLanguage}></Header>
+   <Routes>
+    <Route path='/*' element={
+      <>
+       <Header Language={Language} Setlanguage={setLanguage}></Header>
+  
     <Routes>
         <Route path="/" element={ <>
            <Navmenu></Navmenu>
@@ -41,8 +46,14 @@ function App() {
         <Route path='/BookTicket/:id' element={<BookTicket/>}></Route>
          <Route path='/MyTicket' element={<MyTicket/>}></Route>
          <Route path='/Account' element={<Account/>}/>        
+          
     </Routes>
       <Footer Language={Language} Setlanguage={setLanguage}/>
+      </>
+    }></Route>
+     <Route path='/Admin' element={<Admin/>}></Route>
+
+    </Routes>  
     </BrowserRouter>
    
    </LanguageContext.Provider>

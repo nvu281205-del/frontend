@@ -12,6 +12,7 @@ export default function BookTicket(){
     const [selectmethod,setSelectMethod]=useState("VNPAY")
     const {id}=useParams()
     const Language=useContext(LanguageContext)
+    const[paymentSuccess,setPaymentSuccess]=useState(false);
      const[eventid,setEventid]=useState({});
     useEffect(()=>{
         axios.get(`http://localhost:3000/events/${id}`)
@@ -42,6 +43,7 @@ export default function BookTicket(){
             });
             
             alert("Đặt vé thành công!")
+            setPaymentSuccess(true);
         }catch(err){
          console.log(err.response?.data || err);
         }
@@ -125,8 +127,8 @@ export default function BookTicket(){
                 <span>{count}</span>
                 </div>        
                  <div className="infoprice">
-                 <span>{ticket.price}</span>
-                 <span>{ticket.price*count}</span>
+                 <span>{Number(ticket.price).toLocaleString('vi-VN')} </span>
+                 <span>{Number(ticket.price*count).toLocaleString('vi-VN')}</span>
                 </div>
                </div>
                     )
@@ -137,17 +139,17 @@ export default function BookTicket(){
                   <span>{Language==='vi'?"Thông tin đơn hàng":"Order information"}</span>
                   <div className="Subtotal">
                   <span>{Language==='vi'?"Tạm tính":"Subtotal"}</span>
-                  <span>{totalPrice}</span>
+                  <span>{Number(totalPrice).toLocaleString('vi-VN')} VND</span>
                   </div>
                   <div className="Total">
                     <div className="totalform">
                         <span>Total</span>
-                        <span className="pricetotal">{totalPrice}</span>
+                        <span className="pricetotal">{Number(totalPrice).toLocaleString('vi-VN')} VND</span>
                     </div>
                     <p>By proceeding the order , you agree to the 
                         General Trading Conditions
                     </p>
-                    <button onClick={handlePayment} className="PaymentButton">Payment</button>
+                    <button onClick={handlePayment} disabled={paymentSuccess} className={`PaymentButton ${paymentSuccess ? "Success" : ""}`}>{Language==="vi"?"Thanh toán":"Payment"}</button>
                   </div>
             </div>
             </div>
