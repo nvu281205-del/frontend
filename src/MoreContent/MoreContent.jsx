@@ -1,7 +1,7 @@
 import { useContext, useEffect,useState } from "react"
 import { useLocation } from "react-router-dom"
 import Content from "../Maincontent/Content";
-import './MoreConTent.css'
+import './MoreContent.css'
 import GridContent from "./GridContent";
 import empty from "/empty.webp"
 import axios from "axios";

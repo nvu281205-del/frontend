@@ -3,7 +3,9 @@ import { useState } from 'react';
 import './Login.css'
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import spinner from "/Loading.png"
 export default function Login({registerRef,ref}){
+    const [loading, setLoading] = useState(false);
     const [email,setEmail]=useState("");
     const [password,setPassword]=useState("");
     const[validemail,setValidemail]=useState(true);
@@ -32,6 +34,7 @@ export default function Login({registerRef,ref}){
         setEmailError("");
     }
 const handleSubmit= async (e)=>{
+    setLoading(true);
     e.preventDefault();
     try{
   const res= await axios.post('http://localhost:3000/auth/login',
@@ -55,6 +58,9 @@ const handleSubmit= async (e)=>{
             setPasswordError(msg);
        }      
     } 
+    finally{
+        setLoading(false);
+    }
 }
     const [show, setShow] = useState(false);
     return (
@@ -85,6 +91,7 @@ const handleSubmit= async (e)=>{
                 </div>
             <span className='form-error'>{ptouched&&password===""?"Nhập mật khẩu":passwordError||""}</span>    
                 </div>
+               {loading && (<img src={spinner} alt="loading" className="spinner-icon" />)}
                 <button type='submit' className={`loginbtn ${isFormValid?"enable":"disable"}`} disabled={!isFormValid} onClick={handleSubmit}>Tiếp tục</button>
                 
 

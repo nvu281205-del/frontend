@@ -4,6 +4,7 @@ import './Register.css'
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
+
 export default function Register({loginRef,ref}){
     const navigate=useNavigate()
       const[error,setError]=useState("");
@@ -62,7 +63,7 @@ export default function Register({loginRef,ref}){
         window.location.reload()
         }catch(err){
             setError(err.response?.data?.message);
-        }       
+        }     
     }
     return (
         <> 
@@ -125,6 +126,7 @@ export default function Register({loginRef,ref}){
                 <span>Đã có tài khoản?</span>
                 <span className='register' onClick={showModal}>Đăng nhập ngay</span>
             </div>
+            
              <button type='submit' onClick={handleSubmit} className={`loginbtn ${isFormValid?"enable":"disable"}`} disabled={!isFormValid}>Tiếp tục</button>  
             </div>
         </form>
