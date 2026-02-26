@@ -25,9 +25,10 @@
 }
 .titleform{
     display: flex;
-    gap: 35px;
+    gap: 40px;
 }
 .spanactive{
+    width: 168px;
     cursor: pointer;
     color: white;
     font-size: 14px;
@@ -37,22 +38,23 @@
 color:#FFFFFF80!important;
 }
 .linecate{
-    z-index: 2;
+    z-index: 10;
     position: absolute;
     bottom: 0;
     border-radius: 100px;
     height: 3px;
-    width: 150px;
+    width: 140px;
+    left: 0px;
     background-color: #2DC275;
 }
 .linecity{
     position: absolute;
-    z-index: 2;
+    z-index: 10;
     bottom: 0;
-    left: 200px;
+    left: 27%;
      border-radius: 100px;
     height: 3px;
-    width: 160px;
+    width: 150px;
     background-color: #2DC275;
 }
 .imgSearchForm{

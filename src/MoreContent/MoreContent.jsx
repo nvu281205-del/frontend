@@ -1,5 +1,5 @@
 import { useContext, useEffect,useState } from "react"
-import { useLocation } from "react-router-dom"
+import { useLocation, useParams } from "react-router-dom"
 import Content from "../Maincontent/Content";
 import './MoreContent.css'
 import GridContent from "./GridContent";
@@ -16,6 +16,7 @@ export default function MoreContent(){
     const title=param.get('title');
     const category =param.get('category');
     const city=param.get('city')
+    const { period } = useParams();
 
     const fetchEvent=async (city,category)=>{
      const res = await axios.get("http://localhost:3000/events",{
@@ -25,14 +26,16 @@ export default function MoreContent(){
     }
     useEffect(()=>{
      let url = "http://localhost:3000/events";
-     if (category) url += `?category=${category}`;
+     if (period === "week") url = "http://localhost:3000/events/week";
+    else if (period === "month") url = "http://localhost:3000/events/month";
+    else if (category) url += `?category=${category}`;
      else if (title) url += `?title=${title}`;
      else if(city) url+=`?city=${city}`
      
      fetch(url)
      .then(res=>res.json())
      .then(json=>setData(json));
-},[category,title,city]);
+},[category,title,city,period]);
     useEffect(() => {
     fetch("http://localhost:3000/events?category=Recommend")
       .then(res => res.json())
