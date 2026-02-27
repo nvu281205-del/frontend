@@ -1,4 +1,5 @@
-TicketBox Frontend 🎨
+# TicketBox Frontend 🎟️
+
 <p align="center">
 <img src="https://vitejs.dev/logo.svg" width="120" alt="Vite Logo" />
 <img src="https://reactjs.org/logo-og.png" width="120" alt="React Logo" />
