@@ -21,17 +21,17 @@ TicketBox Frontend cung cấp giao diện web cho người dùng đặt vé, qu�
 Được xây dựng bằng React + Vite + JavaScript, kết nối trực tiếp với backend NestJS API.
 
 ## Features
-[x] UI cho Events: hiển thị danh sách sự kiện, chi tiết sự kiện.
+- [x] UI cho Events: hiển thị danh sách sự kiện, chi tiết sự kiện.
 
-[x] Ticket Booking UI: form đặt vé, quản lý đơn hàng.
+- [x] Ticket Booking UI: form đặt vé, quản lý đơn hàng.
 
-[x] Auth UI: đăng ký, đăng nhập, logout.
+- [x] Auth UI: đăng ký, đăng nhập, logout.
 
-[x] Routing: React Router.
+- [x] Routing: React Router.
 
-[x] API Integration: kết nối với backend qua Axios/fetch.
+- [x] API Integration: kết nối với backend qua Axios/fetch.
 
-[x] CI/CD: Deploy trên Vercel.
+- [x] CI/CD: Deploy trên Vercel.
 
 ## Tech Stack
 Frontend: React 18, Vite, JavaScript
