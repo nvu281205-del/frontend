@@ -2,7 +2,6 @@ TicketBox Frontend 🎨
 <p align="center">
 <img src="https://vitejs.dev/logo.svg" width="120" alt="Vite Logo" />
 <img src="https://reactjs.org/logo-og.png" width="120" alt="React Logo" />
-<img src="https://raw.githubusercontent.com/github/explore/main/topics/css/css.png" width="120" alt="CSS Logo" />
 </p>
 
 <p align="center">
@@ -42,16 +41,16 @@ Deploy: Vercel
 
 ## Getting Started
 1. Clone repo
-bash ```
+ ```bash
 git clone https://github.com/nvu281205-del/frontend.git
 cd frontend
 ```
 2. Install dependencies
-bash ```
+ ```bash
 npm install
 ```
 3. Run Frontend
-bash ```
+ ```bash
 npm run dev
 ```
 Server chạy tại: <http://localhost:5173>
