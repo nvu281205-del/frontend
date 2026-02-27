@@ -1,16 +1,57 @@
-# React + Vite
+TicketBox Frontend 🎨
+<p align="center">
+<img src="https://vitejs.dev/logo.svg" width="120" alt="Vite Logo" />
+<img src="https://reactjs.org/logo-og.png" width="120" alt="React Logo" />
+<img src="https://raw.githubusercontent.com/github/explore/main/topics/css/css.png" width="120" alt="CSS Logo" />
+</p>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<p align="center">
+<b>TicketBox Frontend</b> — giao diện người dùng cho hệ thống quản lý sự kiện và bán vé
+</p>
 
-Currently, two official plugins are available:
+<p align="center">
+<img src="https://img.shields.io/badge/build-passing-brightgreen" alt="Build Status" />
+<img src="https://img.shields.io/badge/license-MIT-blue" alt="License" />
+<img src="https://img.shields.io/badge/node-%3E%3D16-orange?logo=node.js" alt="NodeJS" />
+<img src="https://img.shields.io/badge/react-18-blue?logo=react" alt="React" />
+</p>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Description
+TicketBox Frontend cung cấp giao diện web cho người dùng đặt vé, quản lý sự kiện và xem thông tin.
+Được xây dựng bằng React + Vite + JavaScript, kết nối trực tiếp với backend NestJS API.
 
-## React Compiler
+## Features
+[x] UI cho Events: hiển thị danh sách sự kiện, chi tiết sự kiện.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+[x] Ticket Booking UI: form đặt vé, quản lý đơn hàng.
 
-## Expanding the ESLint configuration
+[x] Auth UI: đăng ký, đăng nhập, logout.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+[x] Routing: React Router.
+
+[x] API Integration: kết nối với backend qua Axios/fetch.
+
+[x] CI/CD: Deploy trên Vercel.
+
+## Tech Stack
+Frontend: React 18, Vite, JavaScript
+
+Routing: React Router
+
+Deploy: Vercel 
+
+## Getting Started
+1. Clone repo
+bash ```
+git clone https://github.com/nvu281205-del/frontend.git
+cd frontend
+```
+2. Install dependencies
+bash ```
+npm install
+```
+3. Run Frontend
+bash ```
+npm run dev
+```
+Server chạy tại: <http://localhost:5173>
