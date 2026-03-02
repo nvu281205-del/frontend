@@ -37,7 +37,8 @@
     position: relative;
 }
 .myticketpic{
-    width: 560px;
+     position: relative;
+    width: 75%;
     height: 320px;
 }
 .myticketpic img{
@@ -98,7 +99,7 @@
 }
 .mydetaillocate svg{
     width: 30px;
-    height: 20px;
+    height: 30px;
 }
 .mydetaillocate path{
     color:white;
@@ -119,7 +120,7 @@
   background-color: rgb(39, 39, 42);
   position: absolute;
   top: -30px;
-  left: 35.5%;
+  left: -7.5%;
   width: 60px;
   height: 60px;
   border-radius: 100%;
@@ -128,14 +129,14 @@
     background-color: rgb(39, 39, 42);
   position: absolute;
   bottom: -30px;
-  left: 35.5%;
+  left: -7.5%;
   width: 60px;
   height: 60px;
   border-radius: 100%;
 }
 .myline{
     position: absolute;
-    left: 39.7%;
+    left:-0.8px;
     height: 100%;   
 }
 .info{
