@@ -49,14 +49,14 @@ export default function Header({Setlanguage,Language}) {
    function Logout(){
     localStorage.removeItem("token");
     localStorage.removeItem("refreshtoken");
-    window.location.href="/"
+    window.location.reload();
    }
    useEffect(()=>{
     if(!token||!refresh) return;
         const decode = jwtDecode(token);
         const decoderefresh=jwtDecode(refresh);
         if(decoderefresh.exp*1000<Date.now()){
-          Logout()
+          Logout();
         }
         if(decode.exp*1000<Date.now()){
           axios.post("http://localhost:3000/auth/refresh",{
@@ -121,8 +121,8 @@ export default function Header({Setlanguage,Language}) {
                      <button onClick={()=>loginRef.current.showModal()}>{Language==="vi"?'Đăng ký':'Register'}</button>    
                      </div>)}      
                     
-                    <Login setToken={setToken} ref={loginRef} registerRef={regisRef}/>
-                    <Register  setToken={setToken} ref={regisRef} loginRef={loginRef}/>
+                    <Login  ref={loginRef} registerRef={regisRef}/>
+                    <Register ref={regisRef} loginRef={loginRef}/>
                     
                     <div className="Language">
                 {Language==="vi"? <img src={vietnamIcon} alt="Vietnam" />: <img src={englishIcon} alt="English" />}   
