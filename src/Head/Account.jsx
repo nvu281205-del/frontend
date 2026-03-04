@@ -12,10 +12,9 @@ export default function Account(){
     const[phonenumber,setPhoneNumber]=useState("")
     const[datebirth,setDateBirth]=useState("")
     const[gender,setGender]=useState("")
+    const[email,setEmail]=useState("")
     const Language=useContext(LanguageContext);
     const navigate=useNavigate();
-
-    
     useEffect(() => { 
       if (!token) return; axios .get("http://localhost:3000/users", { 
       headers: { Authorization: `Bearer ${token}` }, })
@@ -24,7 +23,9 @@ export default function Account(){
         setPhoneNumber(res.data.phonenumber||""); 
         setName(res.data.username||"");
          setDateBirth(res.data.datebirth||"");
-          setGender(res.data.gender)}) 
+          setGender(res.data.gender);
+          setEmail(res.data.email||"");
+        }) 
        .catch((err) => console.error("Lấy avatar lỗi:", err)); 
       }, [token]);
     const handleSelect=(e)=>{
@@ -77,6 +78,11 @@ export default function Account(){
                  <div>
                 <div className='Label'>{Language==="vi"?"Số điện thoại":"Phone number"}</div>
                 <input value={phonenumber} onChange={(e)=>setPhoneNumber(e.target.value)}  className='infoinput'type="text" placeholder='Nhập ở đây' />
+                 </div>
+
+                   <div>
+                <div className='Label'>{Language==="vi"?"Địa chỉ email":"Email address"}</div>
+                <input value={email} className='infoinput' disabled />
                  </div>
                 
                 <div>

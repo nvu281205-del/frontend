@@ -10,7 +10,7 @@ import SearchContent from "./SearchContent"
 import { Link } from "react-router-dom"
 import { jwtDecode } from "jwt-decode";
 import axios from "axios"
-export default function Header({Setlanguage,Language}) {
+export default function Header({Setlanguage,Language}){
   const [token, setToken] = useState(()=>localStorage.getItem("token") || null);
   const [refresh,_setRefresh]=useState(()=>localStorage.getItem("refreshtoken")||null);
   const loginRef=useRef();
