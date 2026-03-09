@@ -25,13 +25,13 @@
 }
 .titleform{
     display: flex;
-    gap: 40px;
+    gap: 35px;
 }
 .spanactive{
-    width: 168px;
     cursor: pointer;
     color: white;
     font-size: 14px;
+    width: 168px;
     font-family: Arial, Helvetica, sans-serif;
 }
 .spanactive.inactive{
@@ -44,7 +44,6 @@ color:#FFFFFF80!important;
     border-radius: 100px;
     height: 3px;
     width: 140px;
-    left: 0px;
     background-color: #2DC275;
 }
 .linecity{
@@ -100,3 +99,23 @@ color:#FFFFFF80!important;
     grid-template-columns: repeat(3,1fr);
    padding: 0px 10px 0px 10px ; 
 }
+@media (max-width: 768px) {
+    .Search{
+        width: 100%;
+        left: 0;
+        top: 60px;
+        height: 400px;
+    }
+    .titleform{
+        gap: 20px;
+    }
+    .spanactive{
+        width: 120px;
+        font-size: 12px;
+    }
+    .linecity{
+        left: 20%;
+    }
+    .linecate{
+        width: 120px;
+    }
