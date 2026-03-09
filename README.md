@@ -31,8 +31,6 @@ TicketBox Frontend cung cấp giao diện web cho người dùng đặt vé, qu�
 
 - [x] API Integration: kết nối với backend qua Axios/fetch.
 
-- [x] CI/CD: Deploy trên Vercel.
-
 ## Tech Stack
 Frontend: React 18, Vite, JavaScript
 
