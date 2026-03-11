@@ -51,5 +51,12 @@ npm install
 3. Run Frontend
  ```bash
 npm run dev
+
+## Admin Dashboard
+- Đường dẫn: `/Admin`
+- Tài khoản demo:
+  - Email: Admin@gmail.com
+  - Password: Admin123@
+
 ```
 Server chạy tại: <http://localhost:5173>
